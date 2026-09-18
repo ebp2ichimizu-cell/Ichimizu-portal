@@ -1,0 +1,32 @@
+{
+  "active": true,
+  "meeting_no": "26",
+  "date": "2026-10-07",
+  "date_ja": "2026年10月7日（水）",
+  "date_en": "Wednesday, October 7, 2026",
+  "time": "19:30",
+  "title_ja": "第26回いちみず会",
+  "title_en": "26th Ichimizu-kai Meeting",
+  "themes_ja": [
+    "（仮）大阪府警の取り組み紹介",
+    "実務家向け統計分析2",
+    "犯罪予防に役立つ理論紹介1"
+  ],
+  "themes_en": [
+    "Osaka Prefectural Police initiative (tentative)",
+    "Statistical Analysis for Practitioners 2",
+    "Crime Prevention Theories for Practitioners 1"
+  ],
+  "presenters_ja": [
+    "依頼中",
+    "大阪府警 河盛様",
+    "奈良県 草尾"
+  ],
+  "presenters_en": [
+    "To be confirmed",
+    "Mr. Kawamori, Osaka Prefectural Police",
+    "Kusao, Nara Prefecture"
+  ],
+  "zoom_url": "https://us06web.zoom.us/j/9306308578?pwd=uFJhzs3VP8G08R69GSSuHBxcrRTCM8.1&omn=81317928081",
+  "chat_url": "https://us06web.zoom.us/launch/jc/81317928081"
+}
