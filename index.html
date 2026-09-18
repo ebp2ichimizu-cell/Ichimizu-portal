@@ -1,25 +1,553 @@
-<div class="card disabled">
-  <div
-    class="card-title"
-    data-ja="統計演習"
-    data-en="Statistics Training"
-  >
-    統計演習
-  </div>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div
-    class="card-description"
-    data-ja="EBPに必要な統計・関連知識を学ぶ演習サイトです。"
-    data-en="Practice materials for statistics and related knowledge useful for EBP."
-  >
-    EBPに必要な統計・関連知識を学ぶ演習サイトです。
-  </div>
+  <meta name="theme-color" content="#4b4b40">
 
-  <span
-    class="tag"
-    data-ja="公開準備中"
-    data-en="Coming soon"
-  >
-    公開準備中
-  </span>
-</div>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <title>EBP2 - いちみず会</title>
+
+  <style>
+    :root {
+      --bg: #f7f7f3;
+      --card: #ffffff;
+      --text: #303029;
+      --muted: #6b6b60;
+      --accent: #b7b463;
+      --dark: #4b4b40;
+      --border: #e4e3d9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px 18px 48px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .app-logo {
+      width: 116px;
+      height: 116px;
+      object-fit: cover;
+      border-radius: 24px;
+      margin: 0 auto 16px;
+      display: block;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .language {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .language button {
+      border: 1px solid var(--border);
+      background: white;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .language button.active {
+      background: var(--dark);
+      color: white;
+      border-color: var(--dark);
+    }
+
+    .section-title {
+      margin: 28px 4px 12px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      color: inherit;
+      text-decoration: none;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.035);
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .card-description {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #efeee5;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .loading {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .news-box {
+      margin-top: 30px;
+    }
+
+    .news-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .news-item {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .news-item:hover {
+      border-color: var(--accent);
+    }
+
+    .news-meta {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .news-category {
+      background: #efeee5;
+      border-radius: 999px;
+      padding: 3px 7px;
+    }
+
+    .news-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .share-box {
+      margin-top: 30px;
+    }
+
+    .share-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .qr-code {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 12px;
+    }
+
+    .share-text {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 36px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    @media (min-width: 640px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <header>
+      <img
+        src="IMG_2260.png"
+        alt="いちみず会 EBP2 ロゴ"
+        class="app-logo"
+      >
+
+      <h1>EBP2 - いちみず -</h1>
+
+      <div class="subtitle" id="app-description">
+        いちみず会関連サイトへのポータル
+      </div>
+
+      <div class="language">
+        <button
+          id="ja-btn"
+          class="active"
+          onclick="setLanguage('ja')"
+        >
+          日本語
+        </button>
+
+        <button
+          id="en-btn"
+          onclick="setLanguage('en')"
+        >
+          English
+        </button>
+      </div>
+    </header>
+
+    <div class="section-title" id="main-sites-title">
+      主要サイト
+    </div>
+
+    <section id="sites-grid" class="grid">
+      <div class="loading">読み込み中...</div>
+    </section>
+
+    <section class="news-box">
+      <div
+        class="section-title"
+        data-ja="新着情報"
+        data-en="Latest updates"
+      >
+        新着情報
+      </div>
+
+      <div id="news-list" class="news-list">
+        <div
+          class="loading"
+          data-ja="読み込み中..."
+          data-en="Loading..."
+        >
+          読み込み中...
+        </div>
+      </div>
+    </section>
+
+    <section class="share-box">
+      <div
+        class="section-title"
+        data-ja="このポータルを共有"
+        data-en="Share this portal"
+      >
+        このポータルを共有
+      </div>
+
+      <div class="share-card">
+        <img
+          src="portal-qr.png"
+          alt="EBP2 ポータル QRコード"
+          class="qr-code"
+        >
+
+        <div
+          class="share-text"
+          data-ja="QRコードからこのポータルを開けます。"
+          data-en="Open this portal from the QR code."
+        >
+          QRコードからこのポータルを開けます。
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div
+        data-ja="Evidence-Based Policing・犯罪予防の学習と情報共有のためのポータル"
+        data-en="A portal for learning and sharing information on Evidence-Based Policing and crime prevention."
+      >
+        Evidence-Based Policing・犯罪予防の学習と情報共有のためのポータル
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    let currentLanguage =
+      localStorage.getItem("language") || "ja";
+
+    let sitesData = [];
+    let newsData = [];
+
+    function setLanguage(lang) {
+      currentLanguage = lang;
+
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-ja]").forEach(el => {
+        el.textContent = el.dataset[lang];
+      });
+
+      document
+        .getElementById("ja-btn")
+        .classList
+        .toggle("active", lang === "ja");
+
+      document
+        .getElementById("en-btn")
+        .classList
+        .toggle("active", lang === "en");
+
+      document.getElementById("main-sites-title").textContent =
+        lang === "ja" ? "主要サイト" : "Sites";
+
+      document.getElementById("app-description").textContent =
+        lang === "ja"
+          ? "いちみず会関連サイトへのポータル"
+          : "Portal for Ichimizu-kai related websites";
+
+      renderSites();
+      renderNews();
+
+      localStorage.setItem("language", lang);
+    }
+
+    async function loadSites() {
+      try {
+        const response = await fetch("./sites.json", {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error("sites.jsonの読み込みに失敗しました");
+        }
+
+        sitesData = await response.json();
+
+        renderSites();
+
+      } catch (error) {
+        document.getElementById("sites-grid").innerHTML = `
+          <div class="loading">
+            サイト一覧を読み込めませんでした。
+          </div>
+        `;
+
+        console.error(error);
+      }
+    }
+
+    function renderSites() {
+      const container =
+        document.getElementById("sites-grid");
+
+      if (!container || !sitesData.length) {
+        return;
+      }
+
+      container.innerHTML =
+        sitesData.map(item => {
+          const title =
+            currentLanguage === "ja"
+              ? item.title_ja
+              : item.title_en;
+
+          const description =
+            currentLanguage === "ja"
+              ? item.description_ja
+              : item.description_en;
+
+          const category =
+            currentLanguage === "ja"
+              ? item.category_ja
+              : item.category_en;
+
+          const url =
+            currentLanguage === "ja"
+              ? item.url_ja
+              : item.url_en;
+
+          return `
+            <a
+              class="card"
+              href="${url}"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="card-title">
+                ${title}
+              </div>
+
+              <div class="card-description">
+                ${description}
+              </div>
+
+              <span class="tag">
+                ${category}
+              </span>
+            </a>
+          `;
+        }).join("");
+    }
+
+    async function loadNews() {
+      try {
+        const response = await fetch("./news.json", {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error("news.jsonの読み込みに失敗しました");
+        }
+
+        newsData = await response.json();
+
+        renderNews();
+
+      } catch (error) {
+        document.getElementById("news-list").innerHTML = `
+          <div class="loading">
+            新着情報を読み込めませんでした。
+          </div>
+        `;
+
+        console.error(error);
+      }
+    }
+
+    function renderNews() {
+      const container =
+        document.getElementById("news-list");
+
+      if (!container || !newsData.length) {
+        return;
+      }
+
+      container.innerHTML =
+        newsData.slice(0, 3).map(item => {
+          const title =
+            currentLanguage === "ja"
+              ? item.title_ja
+              : item.title_en;
+
+          const category =
+            currentLanguage === "ja"
+              ? item.category_ja
+              : item.category_en;
+
+          const content = `
+            <div class="news-meta">
+              <span>${item.date}</span>
+              <span class="news-category">
+                ${category}
+              </span>
+            </div>
+
+            <div class="news-title">
+              ${title}
+            </div>
+          `;
+
+          if (item.url) {
+            return `
+              <a
+                class="news-item"
+                href="${item.url}"
+                target="_blank"
+                rel="noopener"
+              >
+                ${content}
+              </a>
+            `;
+          }
+
+          return `
+            <div class="news-item">
+              ${content}
+            </div>
+          `;
+        }).join("");
+    }
+
+    setLanguage(currentLanguage);
+
+    loadSites();
+    loadNews();
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register(
+          "./service-worker.js"
+        );
+      });
+    }
+  </script>
+
+</body>
+</html>
