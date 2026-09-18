@@ -7,26 +7,9 @@
   <meta name="theme-color" content="#4b4b40">
 
   <link rel="manifest" href="manifest.json">
-
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="apple-touch-icon.png"
-  >
-
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="192x192"
-    href="icon-192.png"
-  >
-
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="512x512"
-    href="icon-512.png"
-  >
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 
   <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -164,9 +147,9 @@
       color: var(--muted);
     }
 
-    .disabled {
-      opacity: 0.55;
-      pointer-events: none;
+    .loading {
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .news-box {
@@ -212,11 +195,6 @@
       font-size: 15px;
       font-weight: 700;
       line-height: 1.5;
-    }
-
-    .news-loading {
-      color: var(--muted);
-      font-size: 14px;
     }
 
     .share-box {
@@ -299,150 +277,8 @@
       主要サイト
     </div>
 
-    <section class="grid">
-
-      <a
-        class="card"
-        href="https://sites.google.com/view/ichimizu-crime-prevention/home"
-        target="_blank"
-        rel="noopener"
-      >
-        <div
-          class="card-title"
-          data-ja="いちみず会 HP"
-          data-en="Ichimizu-kai"
-        >
-          いちみず会 HP
-        </div>
-
-        <div
-          class="card-description"
-          data-ja="いちみず会の活動、勉強会などを紹介しています。"
-          data-en="Information about Ichimizu-kai activities and study meetings."
-        >
-          いちみず会の活動、勉強会などを紹介しています。
-        </div>
-
-        <span
-          class="tag"
-          data-ja="活動"
-          data-en="Activities"
-        >
-          活動
-        </span>
-      </a>
-
-      <a
-        class="card"
-        id="research-link"
-        href="https://ichimizu-research-hub.grassy-wasp-8750.chatgpt.site/#/"
-        target="_blank"
-        rel="noopener"
-      >
-        <div
-          class="card-title"
-          data-ja="いちみず会 研究HUB"
-          data-en="Ichimizu Research Hub"
-        >
-          いちみず会 研究HUB
-        </div>
-
-        <div
-          class="card-description"
-          data-ja="国内のEBP・犯罪予防研究を体系的に整理しています。"
-          data-en="A structured collection of Japanese EBP and crime prevention research."
-        >
-          国内のEBP・犯罪予防研究を体系的に整理しています。
-        </div>
-
-        <span
-          class="tag"
-          data-ja="研究・情報"
-          data-en="Research"
-        >
-          研究・情報
-        </span>
-      </a>
-
-      <a
-        class="card"
-        href="https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site"
-        target="_blank"
-        rel="noopener"
-      >
-        <div
-          class="card-title"
-          data-ja="EBP Daily Brief"
-          data-en="EBP Daily Brief"
-        >
-          EBP Daily Brief
-        </div>
-
-        <div
-          class="card-description"
-          data-ja="国内外の新しい研究・実務動向を継続的に紹介しています。"
-          data-en="Regular updates on new research and policing practice in Japan and overseas."
-        >
-          国内外の新しい研究・実務動向を継続的に紹介しています。
-        </div>
-
-        <span
-          class="tag"
-          data-ja="研究・情報"
-          data-en="Research"
-        >
-          研究・情報
-        </span>
-      </a>
-
-      <a
-  class="card"
-  href="https://ebp-stat-training.grassy-wasp-8750.chatgpt.site"
-  target="_blank"
-  rel="noopener"
->
-  <div
-    class="card-title"
-    data-ja="統計演習"
-    data-en="Statistics Training"
-  >
-    統計演習
-  </div>
-
-  <div
-    class="card-description"
-    data-ja="EBPに必要な統計・関連知識を学ぶ演習サイトです。"
-    data-en="Practice materials for statistics and related knowledge useful for EBP."
-  >
-    EBPに必要な統計・関連知識を学ぶ演習サイトです。
-  </div>
-
-  <span
-    class="tag"
-    data-ja="学習"
-    data-en="Learning"
-  >
-    学習
-  </span>
-</a>
-
-        <div
-          class="card-description"
-          data-ja="EBPに必要な統計・関連知識を学ぶ演習サイトです。"
-          data-en="Practice materials for statistics and related knowledge useful for EBP."
-        >
-          EBPに必要な統計・関連知識を学ぶ演習サイトです。
-        </div>
-
-        <span
-          class="tag"
-          data-ja="公開準備中"
-          data-en="Coming soon"
-        >
-          公開準備中
-        </span>
-      </div>
-
+    <section id="sites-grid" class="grid">
+      <div class="loading">読み込み中...</div>
     </section>
 
     <section class="news-box">
@@ -456,7 +292,7 @@
 
       <div id="news-list" class="news-list">
         <div
-          class="news-loading"
+          class="loading"
           data-ja="読み込み中..."
           data-en="Loading..."
         >
@@ -503,14 +339,15 @@
   </main>
 
   <script>
-    const researchUrls = {
-      ja: "https://ichimizu-research-hub.grassy-wasp-8750.chatgpt.site/#/",
-      en: "https://ichimizu-research-hub.grassy-wasp-8750.chatgpt.site/en"
-    };
+    let currentLanguage =
+      localStorage.getItem("language") || "ja";
 
+    let sitesData = [];
     let newsData = [];
 
     function setLanguage(lang) {
+      currentLanguage = lang;
+
       document.documentElement.lang = lang;
 
       document.querySelectorAll("[data-ja]").forEach(el => {
@@ -527,9 +364,6 @@
         .classList
         .toggle("active", lang === "en");
 
-      document.getElementById("research-link").href =
-        researchUrls[lang];
-
       document.getElementById("main-sites-title").textContent =
         lang === "ja" ? "主要サイト" : "Sites";
 
@@ -538,9 +372,88 @@
           ? "いちみず会関連サイトへのポータル"
           : "Portal for Ichimizu-kai related websites";
 
-      renderNews(lang);
+      renderSites();
+      renderNews();
 
       localStorage.setItem("language", lang);
+    }
+
+    async function loadSites() {
+      try {
+        const response = await fetch("./sites.json", {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error("sites.jsonの読み込みに失敗しました");
+        }
+
+        sitesData = await response.json();
+
+        renderSites();
+
+      } catch (error) {
+        document.getElementById("sites-grid").innerHTML = `
+          <div class="loading">
+            サイト一覧を読み込めませんでした。
+          </div>
+        `;
+
+        console.error(error);
+      }
+    }
+
+    function renderSites() {
+      const container =
+        document.getElementById("sites-grid");
+
+      if (!container || !sitesData.length) {
+        return;
+      }
+
+      container.innerHTML =
+        sitesData.map(item => {
+          const title =
+            currentLanguage === "ja"
+              ? item.title_ja
+              : item.title_en;
+
+          const description =
+            currentLanguage === "ja"
+              ? item.description_ja
+              : item.description_en;
+
+          const category =
+            currentLanguage === "ja"
+              ? item.category_ja
+              : item.category_en;
+
+          const url =
+            currentLanguage === "ja"
+              ? item.url_ja
+              : item.url_en;
+
+          return `
+            <a
+              class="card"
+              href="${url}"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="card-title">
+                ${title}
+              </div>
+
+              <div class="card-description">
+                ${description}
+              </div>
+
+              <span class="tag">
+                ${category}
+              </span>
+            </a>
+          `;
+        }).join("");
     }
 
     async function loadNews() {
@@ -555,28 +468,20 @@
 
         newsData = await response.json();
 
-        const lang =
-          localStorage.getItem("language") || "ja";
-
-        renderNews(lang);
+        renderNews();
 
       } catch (error) {
-        const container =
-          document.getElementById("news-list");
-
-        if (container) {
-          container.innerHTML = `
-            <div class="news-loading">
-              新着情報を読み込めませんでした。
-            </div>
-          `;
-        }
+        document.getElementById("news-list").innerHTML = `
+          <div class="loading">
+            新着情報を読み込めませんでした。
+          </div>
+        `;
 
         console.error(error);
       }
     }
 
-    function renderNews(lang) {
+    function renderNews() {
       const container =
         document.getElementById("news-list");
 
@@ -587,12 +492,12 @@
       container.innerHTML =
         newsData.slice(0, 3).map(item => {
           const title =
-            lang === "ja"
+            currentLanguage === "ja"
               ? item.title_ja
               : item.title_en;
 
           const category =
-            lang === "ja"
+            currentLanguage === "ja"
               ? item.category_ja
               : item.category_en;
 
@@ -630,10 +535,9 @@
         }).join("");
     }
 
-    const savedLanguage =
-      localStorage.getItem("language") || "ja";
+    setLanguage(currentLanguage);
 
-    setLanguage(savedLanguage);
+    loadSites();
     loadNews();
 
     if ("serviceWorker" in navigator) {
