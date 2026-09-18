@@ -104,6 +104,68 @@
       color: var(--muted);
     }
 
+    .meeting-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.035);
+    }
+
+    .meeting-name {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .meeting-date {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .meeting-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+
+    .meeting-list {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .meeting-buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .meeting-button {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .meeting-button.primary {
+      background: var(--dark);
+      color: #ffffff;
+    }
+
+    .meeting-button.secondary {
+      background: #efeee5;
+      color: var(--text);
+    }
+
     .grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -121,7 +183,8 @@
       box-shadow: 0 3px 12px rgba(0,0,0,0.035);
     }
 
-    .card:hover {
+    .card:hover,
+    .news-item:hover {
       border-color: var(--accent);
     }
 
@@ -170,10 +233,6 @@
       padding: 14px 16px;
       color: inherit;
       text-decoration: none;
-    }
-
-    .news-item:hover {
-      border-color: var(--accent);
     }
 
     .news-meta {
@@ -236,6 +295,10 @@
       .grid {
         grid-template-columns: 1fr 1fr;
       }
+
+      .meeting-buttons {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
@@ -257,22 +320,58 @@
       </div>
 
       <div class="language">
-        <button
-          id="ja-btn"
-          class="active"
-          type="button"
-        >
+        <button id="ja-btn" class="active" type="button">
           日本語
         </button>
 
-        <button
-          id="en-btn"
-          type="button"
-        >
+        <button id="en-btn" type="button">
           English
         </button>
       </div>
     </header>
+
+    <section id="meeting-section" hidden>
+      <div class="section-title" id="meeting-section-title">
+        次回のいちみず会
+      </div>
+
+      <div class="meeting-card">
+        <div class="meeting-name" id="meeting-name"></div>
+        <div class="meeting-date" id="meeting-date"></div>
+
+        <div class="meeting-label" id="theme-label">
+          テーマ
+        </div>
+
+        <ul class="meeting-list" id="meeting-themes"></ul>
+
+        <div class="meeting-label" id="presenter-label">
+          報告者
+        </div>
+
+        <ul class="meeting-list" id="meeting-presenters"></ul>
+
+        <div class="meeting-buttons">
+          <a
+            id="zoom-button"
+            class="meeting-button primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Zoomで参加
+          </a>
+
+          <a
+            id="chat-button"
+            class="meeting-button secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ミーティングチャット
+          </a>
+        </div>
+      </div>
+    </section>
 
     <div class="section-title" id="main-sites-title">
       主要サイト
@@ -283,10 +382,7 @@
     </section>
 
     <section class="news-box">
-      <div
-        class="section-title"
-        id="news-section-title"
-      >
+      <div class="section-title" id="news-section-title">
         新着情報
       </div>
 
@@ -296,10 +392,7 @@
     </section>
 
     <section class="share-box">
-      <div
-        class="section-title"
-        id="share-section-title"
-      >
+      <div class="section-title" id="share-section-title">
         このポータルを共有
       </div>
 
@@ -310,10 +403,7 @@
           class="qr-code"
         >
 
-        <div
-          class="share-text"
-          id="share-text"
-        >
+        <div class="share-text" id="share-text">
           QRコードからこのポータルを開けます。
         </div>
       </div>
@@ -331,12 +421,18 @@
     let currentLanguage =
       localStorage.getItem("language") || "ja";
 
+    let meetingData = null;
     let sitesData = [];
     let newsData = [];
 
     const translations = {
       ja: {
         description: "いちみず会関連サイトへのポータル",
+        meetingTitle: "次回のいちみず会",
+        themeLabel: "テーマ",
+        presenterLabel: "報告者",
+        zoomButton: "Zoomで参加",
+        chatButton: "ミーティングチャット",
         sitesTitle: "主要サイト",
         newsTitle: "新着情報",
         shareTitle: "このポータルを共有",
@@ -346,11 +442,16 @@
         loadingSites: "サイト一覧を読み込み中...",
         loadingNews: "新着情報を読み込み中...",
         errorSites: "サイト一覧を読み込めませんでした。",
-        errorNews: "新着情報を読み込めませんでした。"
+        errorNews: "新着情報を読み込めませんでした."
       },
 
       en: {
         description: "Portal for Ichimizu-kai related websites",
+        meetingTitle: "Next Ichimizu-kai meeting",
+        themeLabel: "Topics",
+        presenterLabel: "Presenters",
+        zoomButton: "Join Zoom",
+        chatButton: "Meeting chat",
         sitesTitle: "Sites",
         newsTitle: "Latest updates",
         shareTitle: "Share this portal",
@@ -381,6 +482,21 @@
       document.getElementById("app-description").textContent =
         translations[lang].description;
 
+      document.getElementById("meeting-section-title").textContent =
+        translations[lang].meetingTitle;
+
+      document.getElementById("theme-label").textContent =
+        translations[lang].themeLabel;
+
+      document.getElementById("presenter-label").textContent =
+        translations[lang].presenterLabel;
+
+      document.getElementById("zoom-button").textContent =
+        translations[lang].zoomButton;
+
+      document.getElementById("chat-button").textContent =
+        translations[lang].chatButton;
+
       document.getElementById("main-sites-title").textContent =
         translations[lang].sitesTitle;
 
@@ -396,10 +512,86 @@
       document.getElementById("footer-text").textContent =
         translations[lang].footer;
 
+      renderMeeting();
       renderSites();
       renderNews();
 
       localStorage.setItem("language", lang);
+    }
+
+    async function loadMeeting() {
+      try {
+        const response = await fetch("./meeting.json", {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error(
+            "meeting.json HTTP error: " + response.status
+          );
+        }
+
+        meetingData = await response.json();
+        renderMeeting();
+
+      } catch (error) {
+        console.error(error);
+        document.getElementById("meeting-section").hidden = true;
+      }
+    }
+
+    function renderMeeting() {
+      const section =
+        document.getElementById("meeting-section");
+
+      if (!meetingData || !meetingData.active) {
+        section.hidden = true;
+        return;
+      }
+
+      section.hidden = false;
+
+      const name =
+        currentLanguage === "ja"
+          ? meetingData.title_ja
+          : meetingData.title_en;
+
+      const date =
+        currentLanguage === "ja"
+          ? meetingData.date_ja
+          : meetingData.date_en;
+
+      const themes =
+        currentLanguage === "ja"
+          ? meetingData.themes_ja
+          : meetingData.themes_en;
+
+      const presenters =
+        currentLanguage === "ja"
+          ? meetingData.presenters_ja
+          : meetingData.presenters_en;
+
+      document.getElementById("meeting-name").textContent =
+        name;
+
+      document.getElementById("meeting-date").textContent =
+        `${date} ${meetingData.time}〜`;
+
+      document.getElementById("meeting-themes").innerHTML =
+        themes
+          .map(item => `<li>${item}</li>`)
+          .join("");
+
+      document.getElementById("meeting-presenters").innerHTML =
+        presenters
+          .map(item => `<li>${item}</li>`)
+          .join("");
+
+      document.getElementById("zoom-button").href =
+        meetingData.zoom_url;
+
+      document.getElementById("chat-button").href =
+        meetingData.chat_url;
     }
 
     async function loadSites() {
@@ -446,11 +638,7 @@
       const container =
         document.getElementById("sites-grid");
 
-      if (!container) {
-        return;
-      }
-
-      if (!sitesData.length) {
+      if (!container || !sitesData.length) {
         return;
       }
 
@@ -543,11 +731,7 @@
       const container =
         document.getElementById("news-list");
 
-      if (!container) {
-        return;
-      }
-
-      if (!newsData.length) {
+      if (!container || !newsData.length) {
         return;
       }
 
@@ -614,6 +798,7 @@
 
     setLanguage(currentLanguage);
 
+    loadMeeting();
     loadSites();
     loadNews();
 
