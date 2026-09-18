@@ -334,6 +334,13 @@
     const savedLanguage = localStorage.getItem("language") || "ja";
     setLanguage(savedLanguage);
   </script>
-
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./service-worker.js");
+    });
+  }
+</script>
+  
 </body>
 </html>
