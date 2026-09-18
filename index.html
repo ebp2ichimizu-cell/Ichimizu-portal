@@ -150,6 +150,7 @@
     .loading {
       color: var(--muted);
       font-size: 14px;
+      padding: 8px 4px;
     }
 
     .news-box {
@@ -259,14 +260,14 @@
         <button
           id="ja-btn"
           class="active"
-          onclick="setLanguage('ja')"
+          type="button"
         >
           日本語
         </button>
 
         <button
           id="en-btn"
-          onclick="setLanguage('en')"
+          type="button"
         >
           English
         </button>
@@ -284,28 +285,20 @@
     <section class="news-box">
       <div
         class="section-title"
-        data-ja="新着情報"
-        data-en="Latest updates"
+        id="news-section-title"
       >
         新着情報
       </div>
 
       <div id="news-list" class="news-list">
-        <div
-          class="loading"
-          data-ja="読み込み中..."
-          data-en="Loading..."
-        >
-          読み込み中...
-        </div>
+        <div class="loading">読み込み中...</div>
       </div>
     </section>
 
     <section class="share-box">
       <div
         class="section-title"
-        data-ja="このポータルを共有"
-        data-en="Share this portal"
+        id="share-section-title"
       >
         このポータルを共有
       </div>
@@ -319,8 +312,7 @@
 
         <div
           class="share-text"
-          data-ja="QRコードからこのポータルを開けます。"
-          data-en="Open this portal from the QR code."
+          id="share-text"
         >
           QRコードからこのポータルを開けます。
         </div>
@@ -328,10 +320,7 @@
     </section>
 
     <footer>
-      <div
-        data-ja="Evidence-Based Policing・犯罪予防の学習と情報共有のためのポータル"
-        data-en="A portal for learning and sharing information on Evidence-Based Policing and crime prevention."
-      >
+      <div id="footer-text">
         Evidence-Based Policing・犯罪予防の学習と情報共有のためのポータル
       </div>
     </footer>
@@ -345,14 +334,39 @@
     let sitesData = [];
     let newsData = [];
 
+    const translations = {
+      ja: {
+        description: "いちみず会関連サイトへのポータル",
+        sitesTitle: "主要サイト",
+        newsTitle: "新着情報",
+        shareTitle: "このポータルを共有",
+        shareText: "QRコードからこのポータルを開けます。",
+        footer:
+          "Evidence-Based Policing・犯罪予防の学習と情報共有のためのポータル",
+        loadingSites: "サイト一覧を読み込み中...",
+        loadingNews: "新着情報を読み込み中...",
+        errorSites: "サイト一覧を読み込めませんでした。",
+        errorNews: "新着情報を読み込めませんでした。"
+      },
+
+      en: {
+        description: "Portal for Ichimizu-kai related websites",
+        sitesTitle: "Sites",
+        newsTitle: "Latest updates",
+        shareTitle: "Share this portal",
+        shareText: "Open this portal from the QR code.",
+        footer:
+          "A portal for learning and sharing information on Evidence-Based Policing and crime prevention.",
+        loadingSites: "Loading sites...",
+        loadingNews: "Loading updates...",
+        errorSites: "Could not load the site list.",
+        errorNews: "Could not load latest updates."
+      }
+    };
+
     function setLanguage(lang) {
       currentLanguage = lang;
-
       document.documentElement.lang = lang;
-
-      document.querySelectorAll("[data-ja]").forEach(el => {
-        el.textContent = el.dataset[lang];
-      });
 
       document
         .getElementById("ja-btn")
@@ -364,13 +378,23 @@
         .classList
         .toggle("active", lang === "en");
 
-      document.getElementById("main-sites-title").textContent =
-        lang === "ja" ? "主要サイト" : "Sites";
-
       document.getElementById("app-description").textContent =
-        lang === "ja"
-          ? "いちみず会関連サイトへのポータル"
-          : "Portal for Ichimizu-kai related websites";
+        translations[lang].description;
+
+      document.getElementById("main-sites-title").textContent =
+        translations[lang].sitesTitle;
+
+      document.getElementById("news-section-title").textContent =
+        translations[lang].newsTitle;
+
+      document.getElementById("share-section-title").textContent =
+        translations[lang].shareTitle;
+
+      document.getElementById("share-text").textContent =
+        translations[lang].shareText;
+
+      document.getElementById("footer-text").textContent =
+        translations[lang].footer;
 
       renderSites();
       renderNews();
@@ -379,27 +403,42 @@
     }
 
     async function loadSites() {
+      const container =
+        document.getElementById("sites-grid");
+
+      container.innerHTML = `
+        <div class="loading">
+          ${translations[currentLanguage].loadingSites}
+        </div>
+      `;
+
       try {
         const response = await fetch("./sites.json", {
           cache: "no-store"
         });
 
         if (!response.ok) {
-          throw new Error("sites.jsonの読み込みに失敗しました");
+          throw new Error(
+            "sites.json HTTP error: " + response.status
+          );
         }
 
         sitesData = await response.json();
 
+        if (!Array.isArray(sitesData)) {
+          throw new Error("sites.json is not an array");
+        }
+
         renderSites();
 
       } catch (error) {
-        document.getElementById("sites-grid").innerHTML = `
+        console.error(error);
+
+        container.innerHTML = `
           <div class="loading">
-            サイト一覧を読み込めませんでした。
+            ${translations[currentLanguage].errorSites}
           </div>
         `;
-
-        console.error(error);
       }
     }
 
@@ -407,7 +446,11 @@
       const container =
         document.getElementById("sites-grid");
 
-      if (!container || !sitesData.length) {
+      if (!container) {
+        return;
+      }
+
+      if (!sitesData.length) {
         return;
       }
 
@@ -438,7 +481,7 @@
               class="card"
               href="${url}"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               <div class="card-title">
                 ${title}
@@ -457,27 +500,42 @@
     }
 
     async function loadNews() {
+      const container =
+        document.getElementById("news-list");
+
+      container.innerHTML = `
+        <div class="loading">
+          ${translations[currentLanguage].loadingNews}
+        </div>
+      `;
+
       try {
         const response = await fetch("./news.json", {
           cache: "no-store"
         });
 
         if (!response.ok) {
-          throw new Error("news.jsonの読み込みに失敗しました");
+          throw new Error(
+            "news.json HTTP error: " + response.status
+          );
         }
 
         newsData = await response.json();
 
+        if (!Array.isArray(newsData)) {
+          throw new Error("news.json is not an array");
+        }
+
         renderNews();
 
       } catch (error) {
-        document.getElementById("news-list").innerHTML = `
+        console.error(error);
+
+        container.innerHTML = `
           <div class="loading">
-            新着情報を読み込めませんでした。
+            ${translations[currentLanguage].errorNews}
           </div>
         `;
-
-        console.error(error);
       }
     }
 
@@ -485,55 +543,74 @@
       const container =
         document.getElementById("news-list");
 
-      if (!container || !newsData.length) {
+      if (!container) {
+        return;
+      }
+
+      if (!newsData.length) {
         return;
       }
 
       container.innerHTML =
-        newsData.slice(0, 3).map(item => {
-          const title =
-            currentLanguage === "ja"
-              ? item.title_ja
-              : item.title_en;
+        newsData
+          .slice(0, 3)
+          .map(item => {
+            const title =
+              currentLanguage === "ja"
+                ? item.title_ja
+                : item.title_en;
 
-          const category =
-            currentLanguage === "ja"
-              ? item.category_ja
-              : item.category_en;
+            const category =
+              currentLanguage === "ja"
+                ? item.category_ja
+                : item.category_en;
 
-          const content = `
-            <div class="news-meta">
-              <span>${item.date}</span>
-              <span class="news-category">
-                ${category}
-              </span>
-            </div>
+            const content = `
+              <div class="news-meta">
+                <span>${item.date}</span>
+                <span class="news-category">
+                  ${category}
+                </span>
+              </div>
 
-            <div class="news-title">
-              ${title}
-            </div>
-          `;
-
-          if (item.url) {
-            return `
-              <a
-                class="news-item"
-                href="${item.url}"
-                target="_blank"
-                rel="noopener"
-              >
-                ${content}
-              </a>
+              <div class="news-title">
+                ${title}
+              </div>
             `;
-          }
 
-          return `
-            <div class="news-item">
-              ${content}
-            </div>
-          `;
-        }).join("");
+            if (item.url) {
+              return `
+                <a
+                  class="news-item"
+                  href="${item.url}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ${content}
+                </a>
+              `;
+            }
+
+            return `
+              <div class="news-item">
+                ${content}
+              </div>
+            `;
+          })
+          .join("");
     }
+
+    document
+      .getElementById("ja-btn")
+      .addEventListener("click", () => {
+        setLanguage("ja");
+      });
+
+    document
+      .getElementById("en-btn")
+      .addEventListener("click", () => {
+        setLanguage("en");
+      });
 
     setLanguage(currentLanguage);
 
@@ -542,9 +619,14 @@
 
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register(
-          "./service-worker.js"
-        );
+        navigator.serviceWorker
+          .register("./service-worker.js")
+          .catch(error => {
+            console.error(
+              "Service Worker registration failed:",
+              error
+            );
+          });
       });
     }
   </script>
