@@ -1,6 +1,14 @@
 [
   {
     "date": "2026-09-18",
+    "title_ja": "統計演習サイトを公開しました",
+    "title_en": "Statistics training site launched",
+    "url": "https://ebp-stat-training.grassy-wasp-8750.chatgpt.site",
+    "category_ja": "学習",
+    "category_en": "Learning"
+  },
+  {
+    "date": "2026-09-18",
     "title_ja": "EBP Daily Briefを更新しました",
     "title_en": "EBP Daily Brief updated",
     "url": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
@@ -14,6 +22,5 @@
     "url": "https://ichimizu-research-hub.grassy-wasp-8750.chatgpt.site/#/",
     "category_ja": "研究HUB",
     "category_en": "Research Hub"
-  },Hub"
-  },
-
+  }
+]
