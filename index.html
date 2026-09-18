@@ -416,45 +416,52 @@
 
   </main>
 
-  <script>
-    const researchUrls = {
-      ja: "https://ichimizu-research-hub.grassy-wasp-8750.chatgpt.site/#/",
-      en: "https://ichimizu-research-hub.grassy-wasp-8750.chatgpt.site/en"
-    };
+  <let newsData = [];
 
-    function setLanguage(lang) {
-      document.documentElement.lang = lang;
+async function loadNews() {
+  try {
+    const response = await fetch("./news.json");
+    newsData = await response.json();
+    renderNews(localStorage.getItem("language") || "ja");
+  } catch (error) {
+    document.getElementById("news-list").innerHTML =
+      '<div class="news-loading">新着情報を読み込めませんでした。</div>';
+  }
+}
 
-      document.querySelectorAll("[data-ja]").forEach(el => {
-        el.textContent = el.dataset[lang];
-      });
+function renderNews(lang) {
+  const container = document.getElementById("news-list");
 
-      document.getElementById("ja-btn").classList.toggle("active", lang === "ja");
-      document.getElementById("en-btn").classList.toggle("active", lang === "en");
+  container.innerHTML = newsData.slice(0, 3).map(item => {
+    const title = lang === "ja" ? item.title_ja : item.title_en;
+    const category = lang === "ja" ? item.category_ja : item.category_en;
 
-      document.getElementById("research-link").href = researchUrls[lang];
+    const content = `
+      <div class="news-meta">
+        <span>${item.date}</span>
+        <span class="news-category">${category}</span>
+      </div>
+      <div class="news-title">${title}</div>
+    `;
 
-      document.getElementById("main-sites-title").textContent =
-        lang === "ja" ? "主要サイト" : "Sites";
-
-      document.getElementById("app-description").textContent =
-        lang === "ja"
-          ? "いちみず会関連サイトへのポータル"
-          : "Portal for Ichimizu-kai related websites";
-
-      localStorage.setItem("language", lang);
+    if (item.url) {
+      return `
+        <a class="news-item"
+           href="${item.url}"
+           target="_blank"
+           rel="noopener">
+          ${content}
+        </a>
+      `;
     }
 
-    const savedLanguage = localStorage.getItem("language") || "ja";
-    setLanguage(savedLanguage);
-  </script>
-<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./service-worker.js");
-    });
-  }
-</script>
+    return `
+      <div class="news-item">
+        ${content}
+      </div>
+    `;
+  }).join("");
+}
   
 </body>
 </html>
