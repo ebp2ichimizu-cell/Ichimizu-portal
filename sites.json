@@ -1,46 +1,32 @@
 [
   {
-    "id": "ichimizu",
-    "title_ja": "いちみず会 HP",
-    "title_en": "Ichimizu-kai",
-    "description_ja": "いちみず会の活動、勉強会などを紹介しています。",
-    "description_en": "Information about Ichimizu-kai activities and study meetings.",
-    "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home",
-    "url_en": "https://sites.google.com/view/ichimizu-en/home",
-    "category_ja": "活動",
-    "category_en": "Activities"
-  },
-  {
-    "id": "research-hub",
-    "title_ja": "いちみず会 研究HUB",
-    "title_en": "Ichimizu Research Hub",
-    "description_ja": "国内のEBP・犯罪予防研究を体系的に整理しています。",
-    "description_en": "A structured collection of Japanese EBP and crime prevention research.",
-    "url_ja": "https://ichimizu-research-hub.grassy-wasp-8750.chatgpt.site/#/",
-    "url_en": "https://ichimizu-research-hub.grassy-wasp-8750.chatgpt.site/en",
-    "category_ja": "研究・情報",
-    "category_en": "Research"
-  },
-  {
-    "id": "daily-brief",
-    "title_ja": "EBP Daily Brief",
-    "title_en": "EBP Daily Brief",
-    "description_ja": "国内外の新しい研究・実務動向を継続的に紹介しています。",
-    "description_en": "Regular updates on new research and policing practice in Japan and overseas.",
-    "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
-    "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
-    "category_ja": "研究・情報",
-    "category_en": "Research"
-  },
-  {
-    "id": "stat-training",
-    "title_ja": "統計演習",
-    "title_en": "Statistics Training",
-    "description_ja": "EBPに必要な統計・関連知識を学ぶ演習サイトです。",
-    "description_en": "Practice materials for statistics and related knowledge useful for EBP.",
-    "url_ja": "https://ebp-stat-training.grassy-wasp-8750.chatgpt.site",
-    "url_en": "https://ebp-stat-training.grassy-wasp-8750.chatgpt.site",
+    "date": "2026-09-18",
+    "title_ja": "統計演習サイトを公開しました",
+    "title_en": "Statistics training site launched",
+    "url": "https://ebp-stat-training.grassy-wasp-8750.chatgpt.site",
     "category_ja": "学習",
-    "category_en": "Learning"
+    "category_en": "Learning",
+    "schedule_ja": "毎週 火・木・土 更新",
+    "schedule_en": "Updated every Tue, Thu & Sat"
+  },
+  {
+    "date": "2026-09-18",
+    "title_ja": "EBP Daily Briefを更新しました",
+    "title_en": "EBP Daily Brief updated",
+    "url": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+    "category_ja": "Daily Brief",
+    "category_en": "Daily Brief",
+    "schedule_ja": "毎週 月・水・金 更新",
+    "schedule_en": "Updated every Mon, Wed & Fri"
+  },
+  {
+    "date": "2026-09-18",
+    "title_ja": "国内警察EBP・犯罪予防研究DBを公開しています",
+    "title_en": "Japanese EBP and crime prevention research database",
+    "url": "https://ichimizu-research-hub.grassy-wasp-8750.chatgpt.site/#/",
+    "category_ja": "研究HUB",
+    "category_en": "Research Hub",
+    "schedule_ja": "毎月1日 更新",
+    "schedule_en": "Updated on the 1st of every month"
   }
 ]
