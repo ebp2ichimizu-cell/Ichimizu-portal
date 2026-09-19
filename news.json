@@ -1,19 +1,23 @@
 [
   {
-    "date": "2026-09-19",
-    "title_ja": "統計演習サイトを更新しました",
+    "date": "2026-09-18",
+    "title_ja": "統計演習サイトを公開しました",
     "title_en": "Statistics training site launched",
     "url": "https://ebp-stat-training.grassy-wasp-8750.chatgpt.site",
     "category_ja": "学習",
-    "category_en": "Learning"
+    "category_en": "Learning",
+    "schedule_ja": "毎週 火・木・土 更新",
+    "schedule_en": "Updated every Tue, Thu & Sat"
   },
   {
-    "date": "2026-09-19",
+    "date": "2026-09-18",
     "title_ja": "EBP Daily Briefを更新しました",
     "title_en": "EBP Daily Brief updated",
     "url": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
     "category_ja": "Daily Brief",
-    "category_en": "Daily Brief"
+    "category_en": "Daily Brief",
+    "schedule_ja": "毎週 月・水・金 更新",
+    "schedule_en": "Updated every Mon, Wed & Fri"
   },
   {
     "date": "2026-09-18",
@@ -21,6 +25,8 @@
     "title_en": "Japanese EBP and crime prevention research database",
     "url": "https://ichimizu-research-hub.grassy-wasp-8750.chatgpt.site/#/",
     "category_ja": "研究HUB",
-    "category_en": "Research Hub"
+    "category_en": "Research Hub",
+    "schedule_ja": "毎月1日 更新",
+    "schedule_en": "Updated on the 1st of every month"
   }
 ]
