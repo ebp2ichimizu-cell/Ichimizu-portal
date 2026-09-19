@@ -257,6 +257,13 @@
       line-height: 1.5;
     }
 
+    .news-schedule {
+      margin-top: 7px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
     .share-box {
       margin-top: 30px;
     }
@@ -435,6 +442,7 @@
         chatButton: "ミーティングチャット",
         sitesTitle: "主要サイト",
         newsTitle: "新着情報",
+        scheduleLabel: "更新予定：",
         shareTitle: "このポータルを共有",
         shareText: "QRコードからこのポータルを開けます。",
         footer:
@@ -442,7 +450,7 @@
         loadingSites: "サイト一覧を読み込み中...",
         loadingNews: "新着情報を読み込み中...",
         errorSites: "サイト一覧を読み込めませんでした。",
-        errorNews: "新着情報を読み込めませんでした."
+        errorNews: "新着情報を読み込めませんでした。"
       },
 
       en: {
@@ -454,6 +462,7 @@
         chatButton: "Meeting chat",
         sitesTitle: "Sites",
         newsTitle: "Latest updates",
+        scheduleLabel: "Update schedule: ",
         shareTitle: "Share this portal",
         shareText: "Open this portal from the QR code.",
         footer:
@@ -749,6 +758,19 @@
                 ? item.category_ja
                 : item.category_en;
 
+            const schedule =
+              currentLanguage === "ja"
+                ? item.schedule_ja
+                : item.schedule_en;
+
+            const scheduleContent = schedule
+              ? `
+                <div class="news-schedule">
+                  ${translations[currentLanguage].scheduleLabel}${schedule}
+                </div>
+              `
+              : "";
+
             const content = `
               <div class="news-meta">
                 <span>${item.date}</span>
@@ -760,6 +782,8 @@
               <div class="news-title">
                 ${title}
               </div>
+
+              ${scheduleContent}
             `;
 
             if (item.url) {
