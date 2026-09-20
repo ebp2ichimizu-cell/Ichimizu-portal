@@ -22,6 +22,18 @@
     "category_en": "Research"
   },
   {
+    "id": "international-ebp-search",
+    "title_ja": "海外EBP検索",
+    "title_en": "International EBP Search",
+    "description_ja": "EBP・犯罪予防に関する海外サイトを日本語で検索・閲覧するのを支援するサイトです。",
+    "description_en": "A site that helps users search and browse international EBP and crime prevention resources in Japanese.",
+    "url_ja": "",
+    "url_en": "",
+    "category_ja": "海外EBP",
+    "category_en": "International EBP",
+    "status": "preparing"
+  },
+  {
     "id": "daily-brief",
     "title_ja": "EBP Daily Brief",
     "title_en": "EBP Daily Brief",
@@ -42,17 +54,5 @@
     "url_en": "https://ebp-stat-training.grassy-wasp-8750.chatgpt.site",
     "category_ja": "学習",
     "category_en": "Learning"
-  },
-  {
-    "id": "international-ebp-search",
-    "title_ja": "海外EBP検索",
-    "title_en": "International EBP Search",
-    "description_ja": "EBP・犯罪予防に関する海外サイトを日本語で検索・閲覧するのを支援するサイトです。",
-    "description_en": "A site that helps users search and browse international EBP and crime prevention resources in Japanese.",
-    "url_ja": "",
-    "url_en": "",
-    "category_ja": "海外EBP",
-    "category_en": "International EBP",
-    "status": "preparing"
   }
 ]
