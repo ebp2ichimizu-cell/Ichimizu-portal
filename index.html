@@ -188,6 +188,15 @@
       border-color: var(--accent);
     }
 
+    .card.preparing {
+      opacity: 0.72;
+      cursor: default;
+    }
+
+    .card.preparing:hover {
+      border-color: var(--border);
+    }
+
     .card-title {
       font-size: 18px;
       font-weight: 700;
@@ -208,6 +217,19 @@
       background: #efeee5;
       font-size: 12px;
       color: var(--muted);
+    }
+
+    .preparing-label {
+      display: inline-block;
+      margin-top: 12px;
+      margin-left: 6px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--dark);
     }
 
     .loading {
@@ -443,6 +465,7 @@
         sitesTitle: "主要サイト",
         newsTitle: "新着情報",
         scheduleLabel: "更新予定：",
+        preparingLabel: "準備中",
         shareTitle: "このポータルを共有",
         shareText: "QRコードからこのポータルを開けます。",
         footer:
@@ -463,6 +486,7 @@
         sitesTitle: "Sites",
         newsTitle: "Latest updates",
         scheduleLabel: "Update schedule: ",
+        preparingLabel: "Coming soon",
         shareTitle: "Share this portal",
         shareText: "Open this portal from the QR code.",
         footer:
@@ -673,6 +697,41 @@
               ? item.url_ja
               : item.url_en;
 
+          const isPreparing =
+            item.status === "preparing";
+
+          const content = `
+            <div class="card-title">
+              ${title}
+            </div>
+
+            <div class="card-description">
+              ${description}
+            </div>
+
+            <span class="tag">
+              ${category}
+            </span>
+
+            ${
+              isPreparing
+                ? `
+                  <span class="preparing-label">
+                    ${translations[currentLanguage].preparingLabel}
+                  </span>
+                `
+                : ""
+            }
+          `;
+
+          if (isPreparing || !url) {
+            return `
+              <div class="card preparing">
+                ${content}
+              </div>
+            `;
+          }
+
           return `
             <a
               class="card"
@@ -680,17 +739,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div class="card-title">
-                ${title}
-              </div>
-
-              <div class="card-description">
-                ${description}
-              </div>
-
-              <span class="tag">
-                ${category}
-              </span>
+              ${content}
             </a>
           `;
         }).join("");
