@@ -1,0 +1,149 @@
+{
+  "ichimizu_columns": [
+    {
+      "id": "column-001",
+      "title_ja": "ニセ警察詐欺特集（RKC高知放送／2026.3.20）",
+      "title_en": "Fake Police Scam Feature (RKC Kochi Broadcasting, Mar. 20, 2026)",
+      "summary_ja": "滋賀大学・島田貴仁教授によるニセ警察官詐欺の解説を紹介。手口を知るだけでなく、未登録番号からの着信を受けない設定など「デフォルトを変える対策」の重要性を取り上げます。",
+      "summary_en": "Introduces Prof. Takahito Shimada's explanation of fake police scams, focusing on preventive actions such as changing default phone settings to block or avoid calls from unknown numbers.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E3%83%8B%E3%82%BB%E8%AD%A6%E5%AF%9F%E8%A9%90%E6%AC%BA%E7%89%B9%E9%9B%86rkc%E9%AB%98%E7%9F%A5%E6%94%BE%E9%80%812026-3-20",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E3%83%8B%E3%82%BB%E8%AD%A6%E5%AF%9F%E8%A9%90%E6%AC%BA%E7%89%B9%E9%9B%86rkc%E9%AB%98%E7%9F%A5%E6%94%BE%E9%80%812026-3-20",
+      "category_ja": "犯罪予防",
+      "category_en": "Crime Prevention",
+      "active": true
+    },
+    {
+      "id": "column-002",
+      "title_ja": "盗撮防止ミラーの広がり",
+      "title_en": "The Spread of Anti-Voyeurism Mirrors",
+      "summary_ja": "大阪駅で始まったエスカレーターへの盗撮防止ミラーの取り組みと、その後の全国への広がりを紹介。現場の着想から効果検証、他地域での追加検証へ発展していく犯罪予防施策の事例です。",
+      "summary_en": "Explores an anti-voyeurism mirror initiative that began at Osaka Station and later spread to other regions, illustrating how a practical idea can develop through evaluation and replication.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E7%9B%97%E6%92%AE%E9%98%B2%E6%AD%A2%E3%83%9F%E3%83%A9%E3%83%BC%E3%81%AE%E5%BA%83%E3%81%8C%E3%82%8A",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E7%9B%97%E6%92%AE%E9%98%B2%E6%AD%A2%E3%83%9F%E3%83%A9%E3%83%BC%E3%81%AE%E5%BA%83%E3%81%8C%E3%82%8A",
+      "category_ja": "犯罪予防",
+      "category_en": "Crime Prevention",
+      "active": true
+    },
+    {
+      "id": "column-003",
+      "title_ja": "イエローロード＠曽根崎",
+      "title_en": "Yellow Road at Sonezaki",
+      "summary_ja": "違法な客待ちが問題となっていた大阪・曽根崎で、道路を黄色く塗装した環境デザインによる対策を紹介。CPTEDやナッジの考え方とともに、効果検証や犯罪・問題行動の転移にも目を向けます。",
+      "summary_en": "Introduces the Yellow Road intervention in Sonezaki, Osaka, using environmental design to address illegal street solicitation while considering CPTED, nudging, evaluation, and displacement.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E3%82%A4%E3%82%A8%E3%83%AD%E3%83%BC%E3%83%AD%E3%83%BC%E3%83%89%E6%9B%BD%E6%A0%B9%E5%B4%8E",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E3%82%A4%E3%82%A8%E3%83%AD%E3%83%BC%E3%83%AD%E3%83%BC%E3%83%89%E6%9B%BD%E6%A0%B9%E5%B4%8E",
+      "category_ja": "犯罪予防",
+      "category_en": "Crime Prevention",
+      "active": true
+    },
+    {
+      "id": "column-004",
+      "title_ja": "その自転車、捜査対象につき【自転車盗対策・仕掛学】",
+      "title_en": "This Bicycle Is Under Investigation: Bicycle Theft Prevention and Shikakeology",
+      "summary_ja": "愛知県警から全国へ広がった「盗難追跡対象」タグによる自転車盗対策を紹介。仕掛学・ナッジの視点に加え、平均への回帰や効果の持続性など、施策を「効いた」で終わらせないEBPの視点も扱います。",
+      "summary_en": "Examines a bicycle-theft prevention initiative using warning tags, linking Shikakeology and nudging with EBP questions such as regression to the mean, replication, and whether effects persist.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E3%81%9D%E3%81%AE%E8%87%AA%E8%BB%A2%E8%BB%8A%E6%8D%9C%E6%9F%BB%E5%AF%BE%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%8D%E8%87%AA%E8%BB%A2%E8%BB%8A%E7%9B%97%E5%AF%BE%E7%AD%96%E4%BB%95%E6%8E%9B%E5%AD%A6",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E3%81%9D%E3%81%AE%E8%87%AA%E8%BB%A2%E8%BB%8A%E6%8D%9C%E6%9F%BB%E5%AF%BE%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%8D%E8%87%AA%E8%BB%A2%E8%BB%8A%E7%9B%97%E5%AF%BE%E7%AD%96%E4%95%E6%8E%9B%E5%AD%A6",
+      "category_ja": "犯罪予防",
+      "category_en": "Crime Prevention",
+      "active": true
+    },
+    {
+      "id": "column-005",
+      "title_ja": "今昔　青色防犯灯",
+      "title_en": "Blue Crime-Prevention Lighting: Then and Now",
+      "summary_ja": "かつて全国に広がった青色防犯灯を題材に、施策が普及することと効果が実証されることの違いを考えます。仮説、効果検証、ロジックモデルの重要性を実務の歴史から振り返るコラムです。",
+      "summary_en": "Uses the history of blue crime-prevention lighting in Japan to examine the difference between widespread adoption and demonstrated effectiveness, highlighting evaluation and logic models.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E4%BB%8A%E6%98%94%E9%9D%92%E8%89%B2%E9%98%B2%E7%8A%AF%E7%81%AF",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E4%BB%8A%E6%98%94%E9%9D%92%E8%89%B2%E9%98%B2%E7%8A%AF%E7%81%AF",
+      "category_ja": "犯罪予防",
+      "category_en": "Crime Prevention",
+      "active": true
+    },
+    {
+      "id": "column-006",
+      "title_ja": "「いちみず会」について",
+      "title_en": "About Ichimizu-kai",
+      "summary_ja": "いちみず会が始まった経緯と、EBP2を掲げる現在までの歩みを紹介。実務家同士の横のつながりと研究者との協働を通じて、エビデンスに基づく警察実務を現場へ広げようとする会の考え方を記しています。",
+      "summary_en": "Describes the origins and development of Ichimizu-kai and its aim of supporting evidence-based police practice through practitioner networks and collaboration with researchers.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/essay/%E3%81%84%E3%81%A1%E3%81%BF%E3%81%9A%E4%BC%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/essay/%E3%81%84%E3%81%A1%E3%81%BF%E3%81%9A%E4%BC%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6",
+      "category_ja": "いちみず会",
+      "category_en": "Ichimizu-kai",
+      "active": true
+    },
+    {
+      "id": "column-007",
+      "title_ja": "【エビデンス】×【エピソード】＝【最強】",
+      "title_en": "Evidence × Experience",
+      "summary_ja": "研究者のエビデンスと、実務家が現場で蓄積してきた経験や機微をどう組み合わせるかを考えるコラム。研究者に「任せる」のではなく、双方の強みを持ち寄る協働のあり方を取り上げます。",
+      "summary_en": "Considers how research evidence can be combined with practitioners' field experience and contextual knowledge, emphasizing active collaboration rather than simply handing problems over to researchers.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/essay/%E3%82%A8%E3%83%93%E3%83%87%E3%83%B3%E3%82%B9%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%E6%9C%80%E5%BC%B7",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/essay/%E3%82%A8%E3%83%93%E3%83%87%E3%83%B3%E3%82%B9%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%E6%9C%80%E5%BC%B7",
+      "category_ja": "EBP2",
+      "category_en": "EBP",
+      "active": true
+    },
+    {
+      "id": "column-008",
+      "title_ja": "学会大会での発表ってどんな感じ？",
+      "title_en": "What Is It Like to Present at an Academic Conference?",
+      "summary_ja": "実務家には少し縁遠く感じられる学会大会について、口頭発表とポスター発表の流れを実体験から紹介。初めて学会に参加・発表する実務家がイメージをつかむための入門コラムです。",
+      "summary_en": "A practitioner's introduction to academic conferences, explaining oral and poster presentations and offering a practical picture of what first-time participants can expect.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/essay/%E5%AD%A6%E4%BC%9A%E5%A4%A7%E4%BC%9A%E3%81%A7%E3%81%AE%E7%99%BA%E8%A1%A8%E3%81%A3%E3%81%A6%E3%81%A9%E3%82%93%E3%81%AA%E6%84%9F%E3%81%98",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/essay/%E5%AD%A6%E4%BC%9A%E5%A4%A7%E4%BC%9A%E3%81%A7%E3%81%AE%E7%99%BA%E8%A1%A8%E3%81%A3%E3%81%A6%E3%81%A9%E3%82%93%E3%81%AA%E6%84%9F%E3%81%98",
+      "category_ja": "研究・学会",
+      "category_en": "Research & Conferences",
+      "active": true
+    },
+    {
+      "id": "column-009",
+      "title_ja": "犯罪予防研究室（科警研）への派遣について",
+      "title_en": "A Practitioner's Year at the Crime Prevention Research Division",
+      "summary_ja": "科学警察研究所・犯罪予防研究室への1年間の派遣経験を、分析、アンケート、倫理審査、学会発表、海外学会などの実体験とともに紹介。実務家が研究に触れ、EBP2へ向かう過程を具体的にたどります。",
+      "summary_en": "A detailed account of a practitioner's year at Japan's National Research Institute of Police Science, covering data analysis, surveys, ethics review, conferences, and the development of an EBP perspective.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/essay/%E7%8A%AF%E7%BD%AA%E4%BA%88%E9%98%B2%E7%A0%94%E7%A9%B6%E5%AE%A4%E7%A7%91%E8%AD%A6%E7%A0%94%E6%B4%BE%E9%81%A3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/essay/%E7%8A%AF%E7%BD%AA%E4%BA%88%E9%98%B2%E7%A0%94%E7%A9%B6%E5%AE%A4%E7%A7%91%E8%AD%A6%E7%A0%94%E6%B4%BE%E9%81%A3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6",
+      "category_ja": "EBP2",
+      "category_en": "EBP",
+      "active": true
+    },
+    {
+      "id": "column-010",
+      "title_ja": "実務家のためのjamoviの使い方",
+      "title_en": "How to Use jamovi for Practitioners",
+      "summary_ja": "無料の統計ソフトjamoviを、統計初学者の実務家向けに解説。インストールからデータ整理、グラフ、相関分析、二項ロジスティック回帰まで、「まず実務で使う」ための操作を学べます。",
+      "summary_en": "A practical introduction to the free statistical software jamovi, covering installation, data preparation, graphs, correlation analysis, and binary logistic regression for beginners.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/how_to_jamovi",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/how_to_jamovi",
+      "category_ja": "統計・分析",
+      "category_en": "Statistics & Analysis",
+      "active": true
+    },
+    {
+      "id": "column-011",
+      "title_ja": "第1講　目的とデータの種類から選ぶ分析手法",
+      "title_en": "Lesson 1: Choosing an Analysis Method by Purpose and Data Type",
+      "summary_ja": "警察実務家向け統計入門の第1講。目的変数・説明変数、質的・量的データから分析手法を選ぶ基本を整理し、t検定、カイ二乗検定、単回帰・重回帰までを初学者向けに紹介します。",
+      "summary_en": "Lesson 1 of an introductory statistics series for police practitioners, covering variable types and the basic selection of t-tests, chi-square tests, and simple and multiple regression.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/%E5%AE%9F%E5%8B%99%E5%AE%B6%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E7%B5%B1%E8%A8%88%E5%88%86%E6%9E%90/%E7%AC%AC1%E8%AC%9B",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/%E5%AE%9F%E5%8B%99%E5%AE%B6%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E7%B5%B1%E8%A8%88%E5%88%86%E6%9E%90/%E7%AC%AC1%E8%AC%9B",
+      "category_ja": "統計・分析",
+      "category_en": "Statistics & Analysis",
+      "active": true
+    },
+    {
+      "id": "column-012",
+      "title_ja": "第2講　ロジスティック回帰分析とは",
+      "title_en": "Lesson 2: Introduction to Logistic Regression",
+      "summary_ja": "「勉強時間から合格確率を予測する」という例からロジスティック回帰を解説。オッズ比、予測確率、jamoviでの分析に加え、交絡、多重共線性、相関と因果の違いなど結果を読む際の注意点も扱います。",
+      "summary_en": "Introduces logistic regression through a simple pass/fail example, covering odds ratios, predicted probabilities, jamovi analysis, and cautions involving confounding, multicollinearity, and causal interpretation.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/%E5%AE%9F%E5%8B%99%E5%AE%B6%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E7%B5%B1%E8%A8%88%E5%88%86%E6%9E%90/%E7%AC%AC2%E8%AC%9B",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/%E5%AE%9F%E5%8B%99%E5%AE%B6%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E7%B5%B1%E8%A8%88%E5%88%86%E6%9E%90/%E7%AC%AC2%E8%AC%9B",
+      "category_ja": "統計・分析",
+      "category_en": "Statistics & Analysis",
+      "active": true
+    }
+  ],
+  "daily_brief": []
+}
