@@ -24,6 +24,7 @@
       --accent: #b7b463;
       --dark: #4b4b40;
       --border: #e4e3d9;
+      --soft: #efeee5;
     }
 
     * {
@@ -104,12 +105,18 @@
       color: var(--muted);
     }
 
-    .meeting-card {
+    .meeting-card,
+    .recommendation-card,
+    .card,
+    .share-card {
       background: var(--card);
       border: 1px solid var(--border);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.035);
+    }
+
+    .meeting-card {
       border-radius: 20px;
       padding: 22px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.035);
     }
 
     .meeting-name {
@@ -162,8 +169,66 @@
     }
 
     .meeting-button.secondary {
-      background: #efeee5;
+      background: var(--soft);
       color: var(--text);
+    }
+
+    .recommendations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .recommendation-card {
+      display: flex;
+      flex-direction: column;
+      border-radius: 18px;
+      padding: 20px;
+      min-height: 100%;
+    }
+
+    .recommendation-type {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 9px;
+    }
+
+    .recommendation-date {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .recommendation-title {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 9px;
+    }
+
+    .recommendation-summary {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .recommendation-link {
+      display: inline-block;
+      align-self: flex-start;
+      margin-top: 14px;
+      color: var(--dark);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid var(--dark);
+      padding-bottom: 2px;
+    }
+
+    .recommendation-card:hover,
+    .card:hover {
+      border-color: var(--accent);
     }
 
     .grid {
@@ -174,18 +239,10 @@
 
     .card {
       display: block;
-      background: var(--card);
-      border: 1px solid var(--border);
       border-radius: 18px;
       padding: 20px;
       color: inherit;
       text-decoration: none;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.035);
-    }
-
-    .card:hover,
-    .news-item:hover {
-      border-color: var(--accent);
     }
 
     .card.preparing {
@@ -209,27 +266,39 @@
       color: var(--muted);
     }
 
-    .tag {
-      display: inline-block;
+    .card-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 7px;
       margin-top: 12px;
+    }
+
+    .tag,
+    .preparing-label {
+      display: inline-block;
       padding: 5px 9px;
       border-radius: 999px;
-      background: #efeee5;
       font-size: 12px;
+    }
+
+    .tag {
+      background: var(--soft);
       color: var(--muted);
     }
 
     .preparing-label {
-      display: inline-block;
-      margin-top: 12px;
-      margin-left: 6px;
-      padding: 5px 9px;
-      border-radius: 999px;
       border: 1px solid var(--border);
       background: #ffffff;
-      font-size: 12px;
       font-weight: 700;
       color: var(--dark);
+    }
+
+    .updated {
+      width: 100%;
+      margin-top: 3px;
+      font-size: 12px;
+      color: var(--muted);
     }
 
     .loading {
@@ -238,61 +307,11 @@
       padding: 8px 4px;
     }
 
-    .news-box {
-      margin-top: 30px;
-    }
-
-    .news-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .news-item {
-      display: block;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px 16px;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .news-meta {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      margin-bottom: 6px;
-      font-size: 12px;
-      color: var(--muted);
-      flex-wrap: wrap;
-    }
-
-    .news-category {
-      background: #efeee5;
-      border-radius: 999px;
-      padding: 3px 7px;
-    }
-
-    .news-title {
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-
-    .news-schedule {
-      margin-top: 7px;
-      font-size: 12px;
-      line-height: 1.5;
-      color: var(--muted);
-    }
-
     .share-box {
       margin-top: 30px;
     }
 
     .share-card {
-      background: var(--card);
-      border: 1px solid var(--border);
       border-radius: 18px;
       padding: 22px;
       text-align: center;
@@ -321,7 +340,8 @@
     }
 
     @media (min-width: 640px) {
-      .grid {
+      .grid,
+      .recommendations-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -402,22 +422,22 @@
       </div>
     </section>
 
+    <section id="recommendations-section">
+      <div class="section-title" id="recommendations-section-title">
+        おすすめ
+      </div>
+
+      <div id="recommendations-grid" class="recommendations-grid">
+        <div class="loading">読み込み中...</div>
+      </div>
+    </section>
+
     <div class="section-title" id="main-sites-title">
       主要サイト
     </div>
 
     <section id="sites-grid" class="grid">
       <div class="loading">読み込み中...</div>
-    </section>
-
-    <section class="news-box">
-      <div class="section-title" id="news-section-title">
-        新着情報
-      </div>
-
-      <div id="news-list" class="news-list">
-        <div class="loading">読み込み中...</div>
-      </div>
     </section>
 
     <section class="share-box">
@@ -452,7 +472,10 @@
 
     let meetingData = null;
     let sitesData = [];
-    let newsData = [];
+    let recommendationsData = {
+      ichimizu_columns: [],
+      daily_brief: []
+    };
 
     const translations = {
       ja: {
@@ -462,18 +485,21 @@
         presenterLabel: "報告者",
         zoomButton: "Zoomで参加",
         chatButton: "ミーティングチャット",
+        recommendationsTitle: "おすすめ",
+        columnType: "いちみず会おすすめコラム",
+        dailyType: "今日の EBP Daily Brief",
+        readMore: "読む",
         sitesTitle: "主要サイト",
-        newsTitle: "新着情報",
-        scheduleLabel: "更新予定：",
         preparingLabel: "準備中",
+        updatedLabel: "最終更新",
         shareTitle: "このポータルを共有",
         shareText: "QRコードからこのポータルを開けます。",
         footer:
           "Evidence-Based Policing・犯罪予防の学習と情報共有のためのポータル",
+        loadingRecommendations: "おすすめを読み込み中...",
+        errorRecommendations: "おすすめを読み込めませんでした。",
         loadingSites: "サイト一覧を読み込み中...",
-        loadingNews: "新着情報を読み込み中...",
-        errorSites: "サイト一覧を読み込めませんでした。",
-        errorNews: "新着情報を読み込めませんでした。"
+        errorSites: "サイト一覧を読み込めませんでした。"
       },
 
       en: {
@@ -483,20 +509,168 @@
         presenterLabel: "Presenters",
         zoomButton: "Join Zoom",
         chatButton: "Meeting chat",
+        recommendationsTitle: "Recommended",
+        columnType: "Recommended Ichimizu-kai Column",
+        dailyType: "Today's EBP Daily Brief",
+        readMore: "Read",
         sitesTitle: "Sites",
-        newsTitle: "Latest updates",
-        scheduleLabel: "Update schedule: ",
         preparingLabel: "Coming soon",
+        updatedLabel: "Last updated",
         shareTitle: "Share this portal",
         shareText: "Open this portal from the QR code.",
         footer:
           "A portal for learning and sharing information on Evidence-Based Policing and crime prevention.",
+        loadingRecommendations: "Loading recommendations...",
+        errorRecommendations: "Could not load recommendations.",
         loadingSites: "Loading sites...",
-        loadingNews: "Loading updates...",
-        errorSites: "Could not load the site list.",
-        errorNews: "Could not load latest updates."
+        errorSites: "Could not load the site list."
       }
     };
+
+    function escapeHTML(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function safeUrl(value) {
+      try {
+        const url = new URL(value);
+        if (
+          url.protocol === "https:" ||
+          url.protocol === "http:"
+        ) {
+          return url.href;
+        }
+      } catch (error) {
+        return "";
+      }
+
+      return "";
+    }
+
+    function getJapanDateKey() {
+      const formatter =
+        new Intl.DateTimeFormat("en-CA", {
+          timeZone: "Asia/Tokyo",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit"
+        });
+
+      return formatter.format(new Date());
+    }
+
+    function stringHash(value) {
+      let hash = 0;
+
+      for (let i = 0; i < value.length; i++) {
+        hash =
+          ((hash << 5) - hash + value.charCodeAt(i)) |
+          0;
+      }
+
+      return Math.abs(hash);
+    }
+
+    function selectDailyItem(items, key) {
+      if (!items.length) {
+        return null;
+      }
+
+      const index =
+        stringHash(key) % items.length;
+
+      return items[index];
+    }
+
+    function formatDate(dateString) {
+      if (!dateString) {
+        return "";
+      }
+
+      const parts = dateString.split("-");
+
+      if (parts.length !== 3) {
+        return dateString;
+      }
+
+      const year = parts[0];
+      const month = Number(parts[1]);
+      const day = Number(parts[2]);
+
+      if (currentLanguage === "ja") {
+        return `${year}.${month}.${day}`;
+      }
+
+      const date =
+        new Date(
+          `${dateString}T00:00:00+09:00`
+        );
+
+      return new Intl.DateTimeFormat(
+        "en-US",
+        {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+          timeZone: "Asia/Tokyo"
+        }
+      ).format(date);
+    }
+
+    function getRecentDailyBriefItems(items) {
+      const activeItems =
+        items.filter(item => item.active !== false);
+
+      if (!activeItems.length) {
+        return [];
+      }
+
+      const validDates =
+        activeItems
+          .map(item => item.date)
+          .filter(Boolean)
+          .sort();
+
+      if (!validDates.length) {
+        return activeItems;
+      }
+
+      const latestDate =
+        validDates[validDates.length - 1];
+
+      const latest =
+        new Date(
+          `${latestDate}T00:00:00+09:00`
+        );
+
+      const cutoff =
+        new Date(latest);
+
+      cutoff.setDate(
+        cutoff.getDate() - 2
+      );
+
+      return activeItems.filter(item => {
+        if (!item.date) {
+          return false;
+        }
+
+        const itemDate =
+          new Date(
+            `${item.date}T00:00:00+09:00`
+          );
+
+        return (
+          itemDate >= cutoff &&
+          itemDate <= latest
+        );
+      });
+    }
 
     function setLanguage(lang) {
       currentLanguage = lang;
@@ -530,11 +704,11 @@
       document.getElementById("chat-button").textContent =
         translations[lang].chatButton;
 
+      document.getElementById("recommendations-section-title").textContent =
+        translations[lang].recommendationsTitle;
+
       document.getElementById("main-sites-title").textContent =
         translations[lang].sitesTitle;
-
-      document.getElementById("news-section-title").textContent =
-        translations[lang].newsTitle;
 
       document.getElementById("share-section-title").textContent =
         translations[lang].shareTitle;
@@ -546,38 +720,56 @@
         translations[lang].footer;
 
       renderMeeting();
+      renderRecommendations();
       renderSites();
-      renderNews();
 
-      localStorage.setItem("language", lang);
+      localStorage.setItem(
+        "language",
+        lang
+      );
     }
 
     async function loadMeeting() {
       try {
-        const response = await fetch("./meeting.json", {
-          cache: "no-store"
-        });
+        const response =
+          await fetch(
+            "./meeting.json",
+            {
+              cache: "no-store"
+            }
+          );
 
         if (!response.ok) {
           throw new Error(
-            "meeting.json HTTP error: " + response.status
+            "meeting.json HTTP error: " +
+            response.status
           );
         }
 
-        meetingData = await response.json();
+        meetingData =
+          await response.json();
+
         renderMeeting();
 
       } catch (error) {
         console.error(error);
-        document.getElementById("meeting-section").hidden = true;
+
+        document
+          .getElementById("meeting-section")
+          .hidden = true;
       }
     }
 
     function renderMeeting() {
       const section =
-        document.getElementById("meeting-section");
+        document.getElementById(
+          "meeting-section"
+        );
 
-      if (!meetingData || !meetingData.active) {
+      if (
+        !meetingData ||
+        !meetingData.active
+      ) {
         section.hidden = true;
         return;
       }
@@ -604,32 +796,279 @@
           ? meetingData.presenters_ja
           : meetingData.presenters_en;
 
-      document.getElementById("meeting-name").textContent =
-        name;
+      document.getElementById(
+        "meeting-name"
+      ).textContent =
+        name || "";
 
-      document.getElementById("meeting-date").textContent =
-        `${date} ${meetingData.time}〜`;
+      document.getElementById(
+        "meeting-date"
+      ).textContent =
+        `${date || ""} ${meetingData.time || ""}〜`;
 
-      document.getElementById("meeting-themes").innerHTML =
-        themes
-          .map(item => `<li>${item}</li>`)
-          .join("");
+      document.getElementById(
+        "meeting-themes"
+      ).innerHTML =
+        Array.isArray(themes)
+          ? themes
+              .map(
+                item =>
+                  `<li>${escapeHTML(item)}</li>`
+              )
+              .join("")
+          : "";
 
-      document.getElementById("meeting-presenters").innerHTML =
-        presenters
-          .map(item => `<li>${item}</li>`)
-          .join("");
+      document.getElementById(
+        "meeting-presenters"
+      ).innerHTML =
+        Array.isArray(presenters)
+          ? presenters
+              .map(
+                item =>
+                  `<li>${escapeHTML(item)}</li>`
+              )
+              .join("")
+          : "";
 
-      document.getElementById("zoom-button").href =
-        meetingData.zoom_url;
+      const zoomButton =
+        document.getElementById(
+          "zoom-button"
+        );
 
-      document.getElementById("chat-button").href =
-        meetingData.chat_url;
+      const chatButton =
+        document.getElementById(
+          "chat-button"
+        );
+
+      const zoomUrl =
+        safeUrl(meetingData.zoom_url);
+
+      const chatUrl =
+        safeUrl(meetingData.chat_url);
+
+      if (zoomUrl) {
+        zoomButton.href = zoomUrl;
+        zoomButton.hidden = false;
+      } else {
+        zoomButton.hidden = true;
+      }
+
+      if (chatUrl) {
+        chatButton.href = chatUrl;
+        chatButton.hidden = false;
+      } else {
+        chatButton.hidden = true;
+      }
+    }
+
+    async function loadRecommendations() {
+      const container =
+        document.getElementById(
+          "recommendations-grid"
+        );
+
+      container.innerHTML = `
+        <div class="loading">
+          ${translations[currentLanguage].loadingRecommendations}
+        </div>
+      `;
+
+      try {
+        const response =
+          await fetch(
+            "./recommendations.json",
+            {
+              cache: "no-store"
+            }
+          );
+
+        if (!response.ok) {
+          throw new Error(
+            "recommendations.json HTTP error: " +
+            response.status
+          );
+        }
+
+        recommendationsData =
+          await response.json();
+
+        if (
+          !recommendationsData ||
+          !Array.isArray(
+            recommendationsData.ichimizu_columns
+          ) ||
+          !Array.isArray(
+            recommendationsData.daily_brief
+          )
+        ) {
+          throw new Error(
+            "recommendations.json has an invalid structure"
+          );
+        }
+
+        renderRecommendations();
+
+      } catch (error) {
+        console.error(error);
+
+        container.innerHTML = `
+          <div class="loading">
+            ${translations[currentLanguage].errorRecommendations}
+          </div>
+        `;
+      }
+    }
+
+    function createRecommendationCard(
+      item,
+      type,
+      showDate
+    ) {
+      if (!item) {
+        return "";
+      }
+
+      const title =
+        currentLanguage === "ja"
+          ? item.title_ja
+          : item.title_en;
+
+      const summary =
+        currentLanguage === "ja"
+          ? item.summary_ja
+          : item.summary_en;
+
+      const url =
+        currentLanguage === "ja"
+          ? item.url_ja
+          : item.url_en;
+
+      const typeLabel =
+        type === "column"
+          ? translations[currentLanguage].columnType
+          : translations[currentLanguage].dailyType;
+
+      const safeLink =
+        safeUrl(url);
+
+      return `
+        <article class="recommendation-card">
+          <div class="recommendation-type">
+            ${escapeHTML(typeLabel)}
+          </div>
+
+          ${
+            showDate && item.date
+              ? `
+                <div class="recommendation-date">
+                  ${escapeHTML(formatDate(item.date))}
+                </div>
+              `
+              : ""
+          }
+
+          <div class="recommendation-title">
+            ${escapeHTML(title)}
+          </div>
+
+          <div class="recommendation-summary">
+            ${escapeHTML(summary)}
+          </div>
+
+          ${
+            safeLink
+              ? `
+                <a
+                  class="recommendation-link"
+                  href="${escapeHTML(safeLink)}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ${escapeHTML(
+                    translations[currentLanguage].readMore
+                  )}
+                </a>
+              `
+              : ""
+          }
+        </article>
+      `;
+    }
+
+    function renderRecommendations() {
+      const container =
+        document.getElementById(
+          "recommendations-grid"
+        );
+
+      if (!container) {
+        return;
+      }
+
+      const columns =
+        recommendationsData.ichimizu_columns
+          .filter(
+            item => item.active !== false
+          );
+
+      const recentBriefs =
+        getRecentDailyBriefItems(
+          recommendationsData.daily_brief
+        );
+
+      const japanDate =
+        getJapanDateKey();
+
+      const selectedColumn =
+        selectDailyItem(
+          columns,
+          `column-${japanDate}`
+        );
+
+      const selectedBrief =
+        selectDailyItem(
+          recentBriefs,
+          `daily-${japanDate}`
+        );
+
+      const cards = [
+        createRecommendationCard(
+          selectedColumn,
+          "column",
+          false
+        ),
+        createRecommendationCard(
+          selectedBrief,
+          "daily",
+          true
+        )
+      ].filter(Boolean);
+
+      if (!cards.length) {
+        document
+          .getElementById(
+            "recommendations-section"
+          )
+          .hidden = true;
+
+        return;
+      }
+
+      document
+        .getElementById(
+          "recommendations-section"
+        )
+        .hidden = false;
+
+      container.innerHTML =
+        cards.join("");
     }
 
     async function loadSites() {
       const container =
-        document.getElementById("sites-grid");
+        document.getElementById(
+          "sites-grid"
+        );
 
       container.innerHTML = `
         <div class="loading">
@@ -638,20 +1077,28 @@
       `;
 
       try {
-        const response = await fetch("./sites.json", {
-          cache: "no-store"
-        });
+        const response =
+          await fetch(
+            "./sites.json",
+            {
+              cache: "no-store"
+            }
+          );
 
         if (!response.ok) {
           throw new Error(
-            "sites.json HTTP error: " + response.status
+            "sites.json HTTP error: " +
+            response.status
           );
         }
 
-        sitesData = await response.json();
+        sitesData =
+          await response.json();
 
         if (!Array.isArray(sitesData)) {
-          throw new Error("sites.json is not an array");
+          throw new Error(
+            "sites.json is not an array"
+          );
         }
 
         renderSites();
@@ -669,189 +1116,112 @@
 
     function renderSites() {
       const container =
-        document.getElementById("sites-grid");
+        document.getElementById(
+          "sites-grid"
+        );
 
-      if (!container || !sitesData.length) {
+      if (
+        !container ||
+        !sitesData.length
+      ) {
         return;
       }
 
       container.innerHTML =
-        sitesData.map(item => {
-          const title =
-            currentLanguage === "ja"
-              ? item.title_ja
-              : item.title_en;
-
-          const description =
-            currentLanguage === "ja"
-              ? item.description_ja
-              : item.description_en;
-
-          const category =
-            currentLanguage === "ja"
-              ? item.category_ja
-              : item.category_en;
-
-          const url =
-            currentLanguage === "ja"
-              ? item.url_ja
-              : item.url_en;
-
-          const isPreparing =
-            item.status === "preparing";
-
-          const content = `
-            <div class="card-title">
-              ${title}
-            </div>
-
-            <div class="card-description">
-              ${description}
-            </div>
-
-            <span class="tag">
-              ${category}
-            </span>
-
-            ${
-              isPreparing
-                ? `
-                  <span class="preparing-label">
-                    ${translations[currentLanguage].preparingLabel}
-                  </span>
-                `
-                : ""
-            }
-          `;
-
-          if (isPreparing || !url) {
-            return `
-              <div class="card preparing">
-                ${content}
-              </div>
-            `;
-          }
-
-          return `
-            <a
-              class="card"
-              href="${url}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ${content}
-            </a>
-          `;
-        }).join("");
-    }
-
-    async function loadNews() {
-      const container =
-        document.getElementById("news-list");
-
-      container.innerHTML = `
-        <div class="loading">
-          ${translations[currentLanguage].loadingNews}
-        </div>
-      `;
-
-      try {
-        const response = await fetch("./news.json", {
-          cache: "no-store"
-        });
-
-        if (!response.ok) {
-          throw new Error(
-            "news.json HTTP error: " + response.status
-          );
-        }
-
-        newsData = await response.json();
-
-        if (!Array.isArray(newsData)) {
-          throw new Error("news.json is not an array");
-        }
-
-        renderNews();
-
-      } catch (error) {
-        console.error(error);
-
-        container.innerHTML = `
-          <div class="loading">
-            ${translations[currentLanguage].errorNews}
-          </div>
-        `;
-      }
-    }
-
-    function renderNews() {
-      const container =
-        document.getElementById("news-list");
-
-      if (!container || !newsData.length) {
-        return;
-      }
-
-      container.innerHTML =
-        newsData
-          .slice(0, 3)
+        sitesData
           .map(item => {
             const title =
               currentLanguage === "ja"
                 ? item.title_ja
                 : item.title_en;
 
+            const description =
+              currentLanguage === "ja"
+                ? item.description_ja
+                : item.description_en;
+
             const category =
               currentLanguage === "ja"
                 ? item.category_ja
                 : item.category_en;
 
-            const schedule =
+            const url =
               currentLanguage === "ja"
-                ? item.schedule_ja
-                : item.schedule_en;
+                ? item.url_ja
+                : item.url_en;
 
-            const scheduleContent = schedule
-              ? `
-                <div class="news-schedule">
-                  ${translations[currentLanguage].scheduleLabel}${schedule}
-                </div>
-              `
-              : "";
+            const isPreparing =
+              item.status === "preparing";
+
+            const safeLink =
+              safeUrl(url);
+
+            const updatedContent =
+              item.updated &&
+              !isPreparing
+                ? `
+                  <div class="updated">
+                    ${escapeHTML(
+                      translations[currentLanguage].updatedLabel
+                    )}：
+                    ${escapeHTML(
+                      formatDate(item.updated)
+                    )}
+                  </div>
+                `
+                : "";
 
             const content = `
-              <div class="news-meta">
-                <span>${item.date}</span>
-                <span class="news-category">
-                  ${category}
+              <div class="card-title">
+                ${escapeHTML(title)}
+              </div>
+
+              <div class="card-description">
+                ${escapeHTML(description)}
+              </div>
+
+              <div class="card-meta">
+                <span class="tag">
+                  ${escapeHTML(category)}
                 </span>
-              </div>
 
-              <div class="news-title">
-                ${title}
-              </div>
+                ${
+                  isPreparing
+                    ? `
+                      <span class="preparing-label">
+                        ${escapeHTML(
+                          translations[currentLanguage]
+                            .preparingLabel
+                        )}
+                      </span>
+                    `
+                    : ""
+                }
 
-              ${scheduleContent}
+                ${updatedContent}
+              </div>
             `;
 
-            if (item.url) {
+            if (
+              isPreparing ||
+              !safeLink
+            ) {
               return `
-                <a
-                  class="news-item"
-                  href="${item.url}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <div class="card preparing">
                   ${content}
-                </a>
+                </div>
               `;
             }
 
             return `
-              <div class="news-item">
+              <a
+                class="card"
+                href="${escapeHTML(safeLink)}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 ${content}
-              </div>
+              </a>
             `;
           })
           .join("");
@@ -859,33 +1229,44 @@
 
     document
       .getElementById("ja-btn")
-      .addEventListener("click", () => {
-        setLanguage("ja");
-      });
+      .addEventListener(
+        "click",
+        () => {
+          setLanguage("ja");
+        }
+      );
 
     document
       .getElementById("en-btn")
-      .addEventListener("click", () => {
-        setLanguage("en");
-      });
+      .addEventListener(
+        "click",
+        () => {
+          setLanguage("en");
+        }
+      );
 
     setLanguage(currentLanguage);
 
     loadMeeting();
+    loadRecommendations();
     loadSites();
-    loadNews();
 
     if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker
-          .register("./service-worker.js")
-          .catch(error => {
-            console.error(
-              "Service Worker registration failed:",
-              error
-            );
-          });
-      });
+      window.addEventListener(
+        "load",
+        () => {
+          navigator.serviceWorker
+            .register(
+              "./service-worker.js"
+            )
+            .catch(error => {
+              console.error(
+                "Service Worker registration failed:",
+                error
+              );
+            });
+        }
+      );
     }
   </script>
 
