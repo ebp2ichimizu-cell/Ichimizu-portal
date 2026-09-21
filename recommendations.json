@@ -43,7 +43,7 @@
       "summary_ja": "愛知県警から全国へ広がった「盗難追跡対象」タグによる自転車盗対策を紹介。仕掛学・ナッジの視点に加え、平均への回帰や効果の持続性など、施策を「効いた」で終わらせないEBPの視点も扱います。",
       "summary_en": "Examines a bicycle-theft prevention initiative using warning tags, linking Shikakeology and nudging with EBP questions such as regression to the mean, replication, and whether effects persist.",
       "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E3%81%9D%E3%81%AE%E8%87%AA%E8%BB%A2%E8%BB%8A%E6%8D%9C%E6%9F%BB%E5%AF%BE%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%8D%E8%87%AA%E8%BB%A2%E8%BB%8A%E7%9B%97%E5%AF%BE%E7%AD%96%E4%BB%95%E6%8E%9B%E5%AD%A6",
-      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E3%81%9D%E3%81%AE%E8%87%AA%E8%BB%A2%E8%BB%8A%E6%8D%9C%E6%9F%BB%E5%AF%BE%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%8D%E8%87%AA%E8%BB%A2%E8%BB%8A%E7%9B%97%E5%AF%BE%E7%AD%96%E4%95%E6%8E%9B%E5%AD%A6",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/crime_prevention/%E3%81%9D%E3%81%AE%E8%87%AA%E8%BB%A2%E8%BB%8A%E6%8D%9C%E6%9F%BB%E5%AF%BE%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%8D%E8%87%AA%E8%BB%A2%E8%BB%8A%E7%9B%97%E5%AF%BE%E7%AD%96%E4%BB%95%E6%8E%9B%E5%AD%A6",
       "category_ja": "犯罪予防",
       "category_en": "Crime Prevention",
       "active": true
@@ -145,5 +145,248 @@
       "active": true
     }
   ],
-  "daily_brief": []
+  "daily_brief": [
+    {
+      "id": "daily-20260915-01",
+      "date": "2026-09-15",
+      "title_ja": "「犯罪者に聞く」から「犯罪場面でどう動くかを観察する」へ。VR侵入窃盗実験",
+      "title_en": "From Asking Offenders to Observing Behavior: A VR Burglary Experiment",
+      "summary_ja": "仮想住宅への侵入窃盗を大学生ペアに体験させ、発話・行動・心拍などを測定した手法研究。犯罪場面の意思決定を実験的に観察する可能性を示す一方、実際の犯罪者や犯罪予防効果を検証した研究ではありません。",
+      "summary_en": "A pilot study used virtual burglary scenarios to observe pairs' communication, behavior, and physiological responses. It demonstrates a research method rather than proving how real offenders behave or whether an intervention prevents crime.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260915-02",
+      "date": "2026-09-15",
+      "title_ja": "サイバー空間にも「場所」の発想。ただしゲーム研究は極端に偏っている",
+      "title_en": "Thinking of Cyberspace as Place: Evidence from Gaming Research Remains Limited",
+      "summary_ja": "2014〜2024年の41研究を整理したスコーピングレビュー。オンライン空間を一括りにせず、機能や監視可能性の異なる複数の「cyber place」として捉える必要性を示します。",
+      "summary_en": "A scoping review of 41 studies argues that online environments should be treated as distinct cyber places with different forms of interaction and guardianship, while noting major gaps in the evidence.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260915-03",
+      "date": "2026-09-15",
+      "title_ja": "警察内部の不正通報、「制度を作った」だけでは機能しない",
+      "title_en": "Police Whistleblowing: Creating a Reporting System Is Not Enough",
+      "summary_ja": "英国警察職員15人への質的研究から、手続の理解不足、匿名性、調査への不信、組織文化など内部通報を妨げる要因を整理。制度の設置件数ではなく、通報後の是正や信頼まで追う必要性を示します。",
+      "summary_en": "A qualitative study of 15 police staff highlights barriers to whistleblowing, including uncertainty about procedures, trust, anonymity, and organizational culture.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260915-04",
+      "date": "2026-09-15",
+      "title_ja": "デジタル犯罪予防でも「場所」を細かく切る必要がある",
+      "title_en": "Digital Crime Prevention Also Requires a Finer-Grained Concept of Place",
+      "summary_ja": "SNSやゲームなどを一つの空間として扱わず、公開・非公開、接触機能、外部サービスへの誘導、監視可能性などに分解して犯罪機会を分析するという実務的な発想を紹介します。",
+      "summary_en": "Applies the cyber-place perspective to practice by suggesting that online crime opportunities be analyzed across specific functions, interaction types, and levels of guardianship rather than treating the internet as one space.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260915-05",
+      "date": "2026-09-15",
+      "title_ja": "犯罪研究の次の測定手段として「仮想実験環境」が使える可能性",
+      "title_en": "Virtual Experimental Environments as a New Tool for Crime Research",
+      "summary_ja": "VR環境で発話・行動・心拍などを同時に測定できる点に注目し、現場導入前の介入候補を模擬環境で検討する可能性を整理。現時点では研究基盤としての可能性であり、予防効果そのものは未検証です。",
+      "summary_en": "Explores how virtual environments could support controlled testing of crime-prevention ideas before field implementation, while emphasizing that preventive effects remain untested.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260916-01",
+      "date": "2026-09-16",
+      "title_ja": "警察車両の配置を計算で最適化。モデル上の平均応答時間を約40％短縮",
+      "title_en": "Optimizing Police Vehicle Deployment: Modelled Response Times Fell by About 40%",
+      "summary_ja": "North Wales Policeの技術検証では、過去需要などを使った配置最適化モデルで応答時間や地域カバー率が改善。ただし実運用で確認された効果ではなく、proof-of-technology段階です。",
+      "summary_en": "A North Wales Police technology trial used probabilistic optimization to improve modeled response times and geographic coverage, but the results remain simulation-based rather than observed operational effects.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260916-02",
+      "date": "2026-09-16",
+      "title_ja": "警察AI導入を「精度」だけで評価しない。RUDIフレームワーク",
+      "title_en": "Police AI Should Not Be Judged by Accuracy Alone: The RUDI Framework",
+      "summary_ja": "警察の機械学習導入を、問題設定、データ、モデル、説明可能性、バイアス、実装、運用後監視まで一連の工程で評価するRUDIフレームワークを紹介します。",
+      "summary_en": "The RUDI framework treats police machine-learning deployment as an end-to-end process covering problem definition, data, model development, explainability, bias, implementation, and ongoing monitoring.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260916-03",
+      "date": "2026-09-16",
+      "title_ja": "夜間繁華街のVAWG対応、現場判断は「経験と勘」に依存しやすい",
+      "title_en": "VAWG Policing in the Night-Time Economy Often Relies on Experience and Instinct",
+      "summary_ja": "英国の質的研究は、夜間繁華街での女性・少女への暴力対応で警察官が経験知を重視していることを示しました。経験を否定するのではなく、外部知見やデータと照合し検証可能にする必要性を論じています。",
+      "summary_en": "A UK qualitative study found that officers responding to violence against women and girls in nightlife settings often rely on professional experience and instinct, highlighting the value of testing such knowledge against broader evidence.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260916-04",
+      "date": "2026-09-16",
+      "title_ja": "コンビニ強盗の場所選択を環境条件から検討。ただし「犯罪者調査」ではない",
+      "title_en": "Examining Environmental Factors in Convenience-Store Robbery Location Choice",
+      "summary_ja": "コンビニ強盗の場所選択に関わる環境要因を画像調査で検討した国内研究を紹介。CPTEDや合理的選択理論との接点がある一方、回答者は実際の強盗犯ではなく、犯罪者行動そのものを検証した研究ではありません。",
+      "summary_en": "A Japanese study examined environmental features associated with hypothetical convenience-store robbery choices, offering links to CPTED and rational choice theory while not directly studying actual offenders.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260916-05",
+      "date": "2026-09-16",
+      "title_ja": "滋賀県警×滋賀大学、特殊詐欺対策を「効果検証する施策」へ",
+      "title_en": "Shiga Police × Shiga University: Moving Fraud Prevention Toward Evaluation",
+      "summary_ja": "滋賀県警と滋賀大学の連携を、特殊詐欺対策を実施するだけでなく効果検証の対象として設計する動きとして紹介。警察実務と研究者の協働によるEBPの国内事例です。",
+      "summary_en": "Highlights collaboration between Shiga Prefectural Police and Shiga University to move fraud-prevention measures toward explicit evaluation rather than implementation alone.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260917-01",
+      "date": "2026-09-17",
+      "title_ja": "警察のAI報告書作成、「速い」だけでは成功とみなさない",
+      "title_en": "AI-Generated Police Reports: Faster Does Not Automatically Mean Better",
+      "summary_ja": "警察の報告書作成に生成AIを使う際、処理時間の短縮だけでなく、正確性、修正量、見落とし、職員の確認負担などを含めて評価する必要性を取り上げます。",
+      "summary_en": "Examines AI-assisted police report writing and argues that success should be assessed not only by speed but also by accuracy, correction burden, omissions, and human review.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260917-02",
+      "date": "2026-09-17",
+      "title_ja": "幼少期のいじめ被害と15歳時の武器携帯に関連、ただし後の暴力とは関連せず",
+      "title_en": "Childhood Bullying Victimization Linked to Weapon Carrying at Age 15, but Not Later Violence",
+      "summary_ja": "幼少期のいじめ被害と15歳時点の武器携帯の関連を示した研究を紹介。一方で、その後の暴力との関連は確認されず、関連と因果を分けて読む必要があります。",
+      "summary_en": "A study found an association between childhood bullying victimization and weapon carrying at age 15, while finding no corresponding link with later violence.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260917-03",
+      "date": "2026-09-17",
+      "title_ja": "子ども中心の警察活動、信頼形成には「何をするか」だけでなく「どう接するか」",
+      "title_en": "Child-Centred Policing: Trust Depends on How Police Engage, Not Only What They Do",
+      "summary_ja": "子どもと警察の接触では、施策内容だけでなく、説明、公平性、尊重、参加の機会など接し方が信頼形成に影響するという視点を紹介します。",
+      "summary_en": "Highlights research suggesting that children's trust in police is shaped not only by police actions but also by communication, fairness, respect, and opportunities to participate.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260917-04",
+      "date": "2026-09-17",
+      "title_ja": "YEFが警察向け暴力予防ガイダンスを整理。「根拠不明の施策は優先度を下げる」",
+      "title_en": "YEF Violence-Prevention Guidance for Police: Give Lower Priority to Unproven Approaches",
+      "summary_ja": "Youth Endowment Fundの警察向けガイダンスを紹介。暴力予防施策をエビデンスの強さで区別し、根拠が弱い施策を慣例だけで続けない考え方を整理しています。",
+      "summary_en": "Summarizes Youth Endowment Fund guidance encouraging police to distinguish interventions by evidence strength and avoid prioritizing approaches simply because they are familiar.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260918-01",
+      "date": "2026-09-18",
+      "title_ja": "アジア大会に「LO脅威情報統合センター」設置。全国情報を警察庁で統合",
+      "title_en": "Japan to Establish an LO Threat Intelligence Integration Center for the Asian Games",
+      "summary_ja": "大規模国際大会に向け、全国からの脅威情報を警察庁で統合する体制を紹介。情報を集めるだけでなく、分析、共有、現場対応へつなげる運用設計が論点です。",
+      "summary_en": "Examines Japan's plan to integrate threat information nationally for a major international sporting event, emphasizing the operational chain from collection to analysis, sharing, and response.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260918-02",
+      "date": "2026-09-18",
+      "title_ja": "EBPMの核心を「研究を作る」から「使われるまで」に拡張する新フレーム",
+      "title_en": "Extending EBPM from Producing Research to Ensuring Evidence Is Actually Used",
+      "summary_ja": "研究を作ることだけでなく、その知見が現場で理解され、採用され、実装され、継続的に使われるまでをEBPMの対象として捉えるフレームを紹介します。",
+      "summary_en": "Introduces a framework that treats evidence use itself as part of EBPM, extending attention from producing research to adoption, implementation, and sustained use in practice.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260918-03",
+      "date": "2026-09-18",
+      "title_ja": "AIの「想定外行動」を個別事故で終わらせず、継続的に記録・公表する枠組み",
+      "title_en": "A Framework for Systematically Recording and Reporting Unexpected AI Behavior",
+      "summary_ja": "AIの想定外行動を個別の事故として処理するのではなく、継続的に記録・分類し、再発防止や安全評価に使う考え方を紹介します。",
+      "summary_en": "Explores an approach to treating unexpected AI behavior as data to be systematically recorded, classified, and used for ongoing safety evaluation rather than as isolated incidents.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260918-04",
+      "date": "2026-09-18",
+      "title_ja": "地域安全を警察単独から切り離す。カナダで3自治体の予防型計画を試行",
+      "title_en": "Moving Community Safety Beyond Police Alone: Canadian Municipal Prevention Plans",
+      "summary_ja": "カナダで進む自治体主導の地域安全計画を紹介。警察だけでなく福祉、医療、教育などを含め、問題が重大化する前の予防を地域単位で設計する取り組みです。",
+      "summary_en": "Examines Canadian municipal community-safety planning that integrates policing with health, social services, and other sectors to address risk before problems escalate.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260919-01",
+      "date": "2026-09-19",
+      "title_ja": "CCTVは「置けば効く」ではない。地域条件で関連の強さが変わる",
+      "title_en": "CCTV Is Not Simply Effective Everywhere: Associations Vary by Local Context",
+      "summary_ja": "ワシントンD.C.の観察研究では、CCTVと犯罪率の関連が地域条件によって異なりました。防犯カメラを一律に増やすのではなく、どの環境で追加効果が期待できるかを考える必要性を示します。",
+      "summary_en": "An observational study in Washington, D.C. found that associations between CCTV and crime varied across neighborhood conditions, suggesting that placement context matters.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260919-02",
+      "date": "2026-09-19",
+      "title_ja": "英国、230超のナイフ犯罪集中地区へ重点介入を拡大。23％減は「施策効果」と断定不可",
+      "title_en": "UK Expands Targeted Intervention to Over 230 Knife-Crime Hotspots",
+      "summary_ja": "英国が重点パトロール、CCTV、若者支援、環境改善を組み合わせる対策を230超の地区へ拡大。先行地域で23％減が報告されていますが、対照群のない集計であり因果効果とは断定できません。",
+      "summary_en": "The UK is expanding a package of patrols, CCTV, youth prevention, and environmental improvements to more than 230 high-risk areas. Reported reductions cannot by themselves establish causal effects.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260919-03",
+      "date": "2026-09-19",
+      "title_ja": "少年犯罪予防を警察・教育・福祉の地域統合へ。英国が権限移譲を検討",
+      "title_en": "UK Considers Local Integration of Police, Education and Welfare for Youth Crime Prevention",
+      "summary_ja": "若者を犯罪へ引き込むリスクへの対応を、警察、教育、福祉などの地域連携として設計する英国の動きを紹介。連携件数ではなく、支援接続や再非行などのアウトカムを追う視点が重要です。",
+      "summary_en": "Examines UK efforts to integrate policing, education, welfare, and youth justice locally, with emphasis on tracking outcomes rather than simply counting coordination activity.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260920-01",
+      "date": "2026-09-20",
+      "title_ja": "若者の精神危機対応、警察単独より「警察＋臨床職」の共同対応をどう機能させるか",
+      "title_en": "Youth Mental-Health Crisis Response: How Police-Clinician Co-Response Can Work",
+      "summary_ja": "25歳以下の精神保健危機に対する警察と臨床職の共同対応を扱ったリアリスト・レビュー。共同対応の有無より、役割共有、情報連携、安定した財源など「機能する条件」を整理しています。",
+      "summary_en": "A realist review of police-clinician co-response for mental-health crises among people aged 25 and under focuses on the conditions needed for joint response to function effectively.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    }
+  ]
 }
