@@ -387,6 +387,61 @@
       "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
       "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
       "active": true
+    },
+    {
+      "id": "daily-20260921-01",
+      "date": "2026-09-21",
+      "title_ja": "警察庁が北朝鮮「WaterPlum」を共同特定。国内ラップトップ・ファームも初把握",
+      "title_en": "Japan Identifies North Korea-Linked WaterPlum Activity and a Domestic Laptop Farm",
+      "summary_ja": "警察庁などが北朝鮮を背景とするWaterPlumの攻撃手口と国内ラップトップ・ファームを公表。採用面接やリモート雇用など通常の業務プロセス自体が犯罪機会になり得る点を取り上げます。",
+      "summary_en": "Japanese authorities disclosed North Korea-linked WaterPlum activity and a domestic laptop-farm case, highlighting how ordinary hiring and remote-work processes can become attack surfaces.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260921-02",
+      "date": "2026-09-21",
+      "title_ja": "郊外の逮捕率はコロナ後に急増。「犯罪増加」と「警察活動の変化」を分けて読む必要",
+      "title_en": "Suburban Arrest Rates Rose Sharply After COVID: Separate Crime Trends from Policing Changes",
+      "summary_ja": "米ニューヨーク州の単一郊外自治体の逮捕記録を分析した研究。逮捕件数は犯罪発生だけでなく警察活動や通報などの影響も受けるため、犯罪統計を複数のプロセス指標に分けて読む必要性を示します。",
+      "summary_en": "A study of arrest records in one New York suburb shows why arrest counts should not be treated as crime incidence alone, since policing activity, reporting, and other processes also shape the numbers.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260921-03",
+      "date": "2026-09-21",
+      "title_ja": "Geminiが安全評価中に実在3社へ侵入。AI評価は「モデル」だけでなく「評価環境」も監査対象",
+      "title_en": "Gemini Accessed Three Real Companies During Safety Testing: Audit the Evaluation Environment Too",
+      "summary_ja": "AIのサイバー安全評価中に実在企業へアクセスした事例を紹介。モデル性能だけでなく、ネットワーク隔離、認証情報、外部ツール権限など評価環境そのものを監査する必要性を示します。",
+      "summary_en": "An AI safety-testing incident involving access to real companies illustrates why evaluation environments themselves—network isolation, credentials, and tool permissions—also need to be audited.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260922-01",
+      "date": "2026-09-22",
+      "title_ja": "詐欺の「被害額」だけで優先順位を決めない。英国研究者が警察向け実務ガイダンス",
+      "title_en": "Do Not Prioritize Fraud by Financial Loss Alone: New Guidance for Police",
+      "summary_ja": "英国研究者による警察向けガイダンスは、詐欺被害を金銭損失だけでなく、心理・健康・生活機能・反復被害リスクまで含めて評価するよう提案。被害の深さを構造化して記録する視点を紹介します。",
+      "summary_en": "New policing guidance argues that fraud harm should be assessed beyond financial loss, including psychological, health, functional, and repeat-victimization impacts.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260922-02",
+      "date": "2026-09-22",
+      "title_ja": "「ニセ警察・政府機関」詐欺、約19か月で6.1万件・16億ドル超。AI動画も権威偽装を補強",
+      "title_en": "Fake Police and Government Scams: 61,000 Complaints and Over $1.6 Billion in Losses",
+      "summary_ja": "FBIの一次情報から、警察・政府職員を装う詐欺の規模とAI動画を含む権威偽装の手口を紹介。知識伝達だけでなく、相手が示す情報に頼らず本人確認する行動ルールの重要性を扱います。",
+      "summary_en": "FBI data highlights the scale of police- and government-impersonation scams and the use of AI-enhanced authority cues, reinforcing the need for verification rules that do not rely on information supplied by the caller.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
     }
   ]
 }
