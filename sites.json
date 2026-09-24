@@ -23,17 +23,17 @@
     "category_en": "Research",
     "updated": "2026-09-20"
   },
-  {
-    "id": "international-ebp-search",
-    "title_ja": "海外EBP検索ナビ",
-    "title_en": "International EBP Search",
-    "description_ja": "EBP・犯罪予防に関する海外サイトを日本語で検索・閲覧するのを支援するサイトです。",
-    "description_en": "A site that helps users search and browse international EBP and crime prevention resources in Japanese.",
-    "url_ja": ""./beta-overseas-ebp.html",
-    "url_en": ""./beta-overseas-ebp.html",
-    "category_ja": "海外EBP",
-    "category_en": "International EBP",
-  },
+{
+  "id": "international-ebp-search",
+  "title_ja": "海外EBP検索ナビ",
+  "title_en": "International EBP Search",
+  "description_ja": "EBP・犯罪予防に関する海外サイトを日本語で検索・閲覧するのを支援するサイトです。",
+  "description_en": "A site that helps users search and browse international EBP and crime prevention resources in Japanese.",
+  "url_ja": "./beta-overseas-ebp.html",
+  "url_en": "./beta-overseas-ebp.html",
+  "category_ja": "海外EBP",
+  "category_en": "International EBP"
+},
   {
     "id": "daily-brief",
     "title_ja": "EBP Daily Brief",
