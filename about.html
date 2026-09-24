@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4b4b40">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <title>いちみずポータルについて</title>
+  <style>
+    :root {
+      --bg:#f7f7f3; --card:#ffffff; --text:#303029; --muted:#6b6b60;
+      --accent:#b7b463; --dark:#4b4b40; --border:#e4e3d9; --soft:#efeee5;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+      background:var(--bg); color:var(--text);
+    }
+    .container { max-width:760px; margin:0 auto; padding:28px 18px 48px; }
+    header { text-align:center; margin-bottom:26px; }
+    .app-logo { width:92px; height:92px; object-fit:cover; border-radius:20px; display:block; margin:0 auto 14px; }
+    h1 { margin:0; font-size:27px; }
+    .lead-title { margin-top:12px; font-weight:700; line-height:1.7; font-size:16px; }
+    .intro,.relation,.site-card {
+      background:var(--card); border:1px solid var(--border); border-radius:18px;
+      box-shadow:0 3px 12px rgba(0,0,0,.035);
+    }
+    .intro { margin-top:18px; padding:20px; line-height:1.85; font-size:14px; }
+    .back {
+      display:inline-block; margin-top:16px; color:var(--dark); font-size:13px; font-weight:700;
+      text-decoration:none; border-bottom:1px solid var(--dark); padding-bottom:2px;
+    }
+    .section-title { margin:30px 4px 12px; font-size:15px; font-weight:700; color:var(--muted); }
+    .grid { display:grid; grid-template-columns:1fr; gap:14px; }
+    .site-card { padding:20px; }
+    .site-card:hover { border-color:var(--accent); }
+    .card-top { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+    .number { font-size:12px; font-weight:700; color:var(--muted); margin-bottom:5px; }
+    .site-name { margin:0; font-size:19px; line-height:1.45; }
+    .role { margin-top:5px; font-size:13px; font-weight:700; color:var(--dark); }
+    .badge { flex:0 0 auto; border:1px solid var(--border); background:var(--soft); border-radius:999px; padding:5px 9px; font-size:11px; font-weight:700; }
+    .badge.beta { background:#fff; }
+    .description { margin-top:13px; color:var(--muted); line-height:1.75; font-size:14px; }
+    .use-label { margin-top:14px; font-size:12px; font-weight:700; color:var(--muted); }
+    ul { margin:6px 0 0; padding-left:20px; font-size:13px; line-height:1.7; }
+    .meta { display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; align-items:center; }
+    .meta span { background:var(--soft); border-radius:999px; padding:5px 9px; font-size:11px; color:var(--muted); }
+    .feature-note { margin-top:12px; padding:10px 12px; background:var(--soft); border-radius:12px; font-size:12px; font-weight:700; }
+    .open-button {
+      display:block; margin-top:16px; padding:11px 14px; border-radius:12px; background:var(--dark);
+      color:#fff; text-decoration:none; text-align:center; font-size:13px; font-weight:700;
+    }
+    .relation { padding:20px; line-height:1.8; }
+    .relation-grid { display:grid; gap:10px; margin-top:14px; }
+    .relation-item { padding:12px 14px; border-radius:12px; background:var(--soft); font-size:13px; }
+    .relation-item strong { display:block; margin-bottom:2px; }
+    .cycle { margin-top:18px; padding:14px; border:1px solid var(--border); border-radius:12px; text-align:center; font-weight:700; line-height:1.8; }
+    footer { margin-top:34px; text-align:center; color:var(--muted); font-size:12px; line-height:1.8; }
+    footer a { color:var(--dark); }
+    .loading { color:var(--muted); font-size:14px; padding:8px 4px; }
+    @media (min-width:640px) { .grid { grid-template-columns:1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <img src="IMG_2260.png" alt="いちみず会 EBP2 ロゴ" class="app-logo">
+      <h1>いちみずポータルについて</h1>
+      <div class="lead-title">EBP・犯罪予防を「知る・調べる・学ぶ・実践する」ための入口</div>
+      <a class="back" href="./">← ポータルへ戻る</a>
+    </header>
+
+    <section class="intro">
+      いちみずポータルは、いちみず会が運営するWebサイト群をつなぐ総合入口です。<br><br>
+      いちみず会の活動情報、国内外のEBP・犯罪予防研究、新しい研究・実務情報、統計学習など、それぞれ目的の異なる6つのサイトを運営しています。<br><br>
+      「どこを見ればよいか分からない」ときは、このポータルを入口として利用してください。
+    </section>
+
+    <div class="section-title">6つのサイト</div>
+    <section id="sites-grid" class="grid">
+      <div class="loading">読み込み中...</div>
+    </section>
+
+    <div class="section-title">6つのサイトの関係</div>
+    <section class="relation">
+      <div>いちみず会のWebサイト群は、それぞれ異なる役割を持っています。</div>
+      <div class="relation-grid">
+        <div class="relation-item"><strong>いちみずポータル</strong>「入口・探す」</div>
+        <div class="relation-item"><strong>いちみず会HP</strong>「活動を知る」</div>
+        <div class="relation-item"><strong>国内警察EBP・犯罪予防 研究ハブ</strong>「国内研究を調べる」</div>
+        <div class="relation-item"><strong>海外EBPナビ</strong>「海外エビデンスを調べる」</div>
+        <div class="relation-item"><strong>EBP Daily Brief</strong>「新しい情報を追う」</div>
+        <div class="relation-item"><strong>EBP統計トレーニング</strong>「自分で検証する力を身につける」</div>
+      </div>
+      <div class="cycle">知る → 探す → 読む → 学ぶ → 検証する → 実務に活かす</div>
+      <p style="margin:16px 0 0;font-size:14px;color:var(--muted);">
+        これらを相互に行き来することで、EBPのサイクルを支援することを目指しています。
+      </p>
+    </section>
+
+    <footer>
+      Evidence-Based Policing・犯罪予防の学習と情報共有のためのポータル
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,0,0,.12);">
+        <strong>お問い合わせ</strong><br>
+        サイト管理者：いちみず会事務局（元奈良県警察　草尾祐樹）<br>
+        連絡先：<a href="mailto:ebp2.ichimizu@gmail.com">ebp2.ichimizu@gmail.com</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    function escapeHTML(value) {
+      return String(value ?? "")
+        .replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;").replaceAll("'","&#039;");
+    }
+
+    function safeUrl(value) {
+      try {
+        const url = new URL(value, location.href);
+        if (url.protocol === "https:" || url.protocol === "http:") return url.href;
+      } catch (error) {}
+      return "";
+    }
+
+    async function loadSites() {
+      const grid = document.getElementById("sites-grid");
+      try {
+        const response = await fetch("./about-sites.json", { cache: "no-store" });
+        if (!response.ok) throw new Error("about-sites.json HTTP error: " + response.status);
+        const data = await response.json();
+        const items = Array.isArray(data.sites)
+          ? [...data.sites].sort((a,b) => (a.order || 0) - (b.order || 0))
+          : [];
+
+        grid.innerHTML = items.map(item => {
+          const url = safeUrl(item.url);
+          const beta = item.status === "beta";
+          const feature = item.feature_note
+            ? `<div class="feature-note">${escapeHTML(item.feature_note)}</div>`
+            : "";
+          const badge = beta ? '<span class="badge beta">βテスト中</span>' : "";
+          const useCases = Array.isArray(item.use_cases)
+            ? item.use_cases.map(x => `<li>${escapeHTML(x)}</li>`).join("")
+            : "";
+
+          return `
+            <article class="site-card">
+              <div class="card-top">
+                <div>
+                  <div class="number">${String(item.order || "").padStart(2,"0")}</div>
+                  <h2 class="site-name">${escapeHTML(item.name)}</h2>
+                  <div class="role">役割：${escapeHTML(item.role)}</div>
+                </div>
+                ${badge}
+              </div>
+              <div class="description">${escapeHTML(item.description)}</div>
+              <div class="use-label">こんなときに</div>
+              <ul>${useCases}</ul>
+              <div class="meta">
+                <span>${escapeHTML(item.platform || "")}</span>
+                <span>更新：${escapeHTML(item.update_frequency || "")}</span>
+              </div>
+              ${feature}
+              ${url ? `
+                <a class="open-button" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">
+                  サイトを開く
+                </a>
+              ` : ""}
+            </article>
+          `;
+        }).join("");
+      } catch (error) {
+        console.error(error);
+        grid.innerHTML = '<div class="loading">サイト情報を読み込めませんでした。</div>';
+      }
+    }
+
+    loadSites();
+  </script>
+</body>
+</html>
