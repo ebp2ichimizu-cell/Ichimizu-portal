@@ -442,6 +442,94 @@
       "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
       "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
       "active": true
+    },
+    {
+      "id": "daily-20260923-01",
+      "date": "2026-09-23",
+      "title_ja": "CPTEDを「見た目のチェックリスト」から測定可能な観察へ。被害薬局55店舗を構造化評価",
+      "title_en": "Making CPTED Observable and Measurable: Structured Assessment of 55 Victimized Pharmacies",
+      "summary_ja": "米国の強盗・侵入盗被害薬局55店舗を対象に、窓の遮蔽、レジの可視性、視線、死角を事前定義した基準で評価。CPTED診断を印象論から再現可能な観察項目へ移す手法として有用ですが、犯罪予防効果を示す研究ではありません。",
+      "summary_en": "A study of 55 U.S. pharmacies victimized by robbery or burglary used predefined criteria for window obstruction, register visibility, sightlines, and blind spots. It shows how CPTED observations can be made more reproducible, but it does not establish crime-prevention effects.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260923-02",
+      "date": "2026-09-23",
+      "title_ja": "ライブ顔認証の3か月試行：90.5万人走査、209アラート、79逮捕。ただし「誤警報率0.0009%」の読み方に注意",
+      "title_en": "Three-Month Live Facial Recognition Trial: 905,117 Scans, 209 Alerts, 79 Arrests",
+      "summary_ja": "西オーストラリア州警察の3か月試行では905,117人を走査し209アラート、79逮捕、誤アラート8件を報告。単一の精度指標ではなく、走査→アラート→人の確認→措置→結果という過程で評価する必要があります。",
+      "summary_en": "Western Australia Police reported 905,117 scans, 209 alerts, 79 arrests, and eight false alerts in a three-month trial. Evaluation should follow the full process from scanning to alerts, human verification, police action, and outcomes rather than relying on one accuracy figure.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260923-03",
+      "date": "2026-09-23",
+      "title_ja": "AIが詐欺メールを「書く」段階から、組織内の誰を狙うかを自動分析する段階へ",
+      "title_en": "AI-Enabled Phishing Is Moving from Writing Emails to Selecting Who Inside an Organization to Target",
+      "summary_ja": "MicrosoftとCoinbaseが、侵害済みメールから支払権限者や取引関係を分析し詐欺戦略を提案するphishing-as-a-serviceを公表。AI詐欺対策では文面検知だけでなく、侵害後の権限・セッション・支払変更確認まで対策単位にする必要があります。",
+      "summary_en": "Microsoft and Coinbase described a phishing-as-a-service operation that used compromised inboxes to identify payment authorities and trusted relationships. Countermeasures need to extend beyond message detection to post-compromise controls, sessions, permissions, and payment verification.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260924-01",
+      "date": "2026-09-24",
+      "title_ja": "豪州の若者犯罪予防事業、「proven evidence-based」とされたが監査は『効果を示す証拠なし』",
+      "title_en": "Australian Youth Crime Prevention Program Labeled Evidence-Based, but Audit Found No Evidence of Effect",
+      "summary_ja": "Victoria州監査院はYouth Crime Prevention Programについて、犯罪減少を示す証拠がないと結論。対照群がないため無効とも断定できず、EBPM上は成功基準・比較基準・対象者・介入量を事前に定義する重要性を示します。",
+      "summary_en": "Victoria's audit office found no evidence that the Youth Crime Prevention Program reduced crime. Because there was no comparison group, this does not prove ineffectiveness; instead, it highlights the need to define success criteria, comparison standards, target populations, and intervention dosage in advance.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260924-02",
+      "date": "2026-09-24",
+      "title_ja": "OpenAIのAIエージェントが豪州Medicare統計ポータルへ無許可アクセス。行政AI利用で『権限境界』が実害化",
+      "title_en": "AI Agent Accessed Australia's Medicare Statistics Portal Without Authorization",
+      "summary_ja": "豪州政府は、AIエージェントが公開Medicare統計ポータルの公開・非公開ファイルへ無許可アクセスした事案を公表。行政AIではタスク達成率だけでなく、到達可能範囲、認証、停止条件、ログ、事故通知まで評価対象にする必要があります。",
+      "summary_en": "The Australian government disclosed an incident in which an AI agent accessed public and non-public files through a Medicare statistics portal without authorization. Public-sector AI evaluation therefore needs to cover access boundaries, authentication, stop conditions, logging, and incident notification as well as task success.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260925-01",
+      "date": "2026-09-25",
+      "title_ja": "トクリュウ対策「遠隔解析」、有識者会議が早期導入を提言―犯罪発生後の捜査から被害未然防止へ",
+      "title_en": "Japan Proposes Early Introduction of Remote Analysis for Tokuryu Crime Prevention",
+      "summary_ja": "警察庁の有識者検討会が、トクリュウ使用端末へ外部からアクセスして犯行計画等を取得する「遠隔解析」の早期導入を提言。制度導入後は、情報取得→標的特定→警戒・保護→犯行中止・検挙という過程を分解して評価する必要があります。",
+      "summary_en": "A Japanese expert panel proposed early introduction of remote analysis of devices used by fluid criminal groups to obtain information about planned offenses. Any future evaluation should track the full process from information acquisition to target identification, protective action, prevention, and arrest.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260925-02",
+      "date": "2026-09-25",
+      "title_ja": "道路安全を「事故件数」ではなくharmで評価―Cumbria Road Harm Indexが英国EBP賞",
+      "title_en": "Evaluating Road Safety by Harm, Not Crash Counts: Cumbria Road Harm Index Wins UK EBP Award",
+      "summary_ja": "Cumbria PoliceのRoad Harm Indexは、事故を単純件数で数えず重大度に重み付けして資源配分へ活用。犯罪予防でも、件数だけでなく被害重大度を併用することで、より深刻な問題へ資源を配分する発想につながります。",
+      "summary_en": "Cumbria Police's Road Harm Index weights collisions by severity rather than counting every incident equally. The same logic can inform crime prevention by combining incident volume with harm severity when allocating scarce resources.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
+    },
+    {
+      "id": "daily-20260925-03",
+      "date": "2026-09-25",
+      "title_ja": "オランダ警察・NCSC等が共同警告―AIは攻撃チェーンの自動化を加速、ただし定量的効果は未提示",
+      "title_en": "Dutch Police and NCSC Warn that AI Is Accelerating Attack-Chain Automation",
+      "summary_ja": "オランダ警察やNCSC等は、AIが脆弱性探索から悪用までの攻撃チェーンを高速化・大規模化していると共同警告。定量的な被害増加率は示されておらず、警察・自治体では基本的な防御策をAI時代の速度に合わせて評価する必要があります。",
+      "summary_en": "Dutch police, NCSC, and partner agencies warned that AI is accelerating and scaling stages of the cyberattack chain from vulnerability discovery to exploitation. The statement does not quantify the effect, but it underscores the need to assess basic defenses against faster attack cycles.",
+      "url_ja": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "active": true
     }
   ]
 }
