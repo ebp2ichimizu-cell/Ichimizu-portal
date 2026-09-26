@@ -9,7 +9,12 @@
     "url_en": "https://sites.google.com/view/ichimizu-en/home",
     "category_ja": "活動",
     "category_en": "Activities",
-    "updated": "2026-09-24"
+    "updated": "2026-09-24",
+    "logo": "./site-logos/logo-ichimizu.png",
+    "theme_color": "#8A8745",
+    "accent_color": "#A9A65A",
+    "tint_color": "#F7F6EA",
+    "border_color": "#DEDCB9"
   },
   {
     "id": "research-hub",
@@ -21,19 +26,29 @@
     "url_en": "https://ebp2ichimizu-cell.github.io/ichimizu-research-hub-github/#/",
     "category_ja": "研究・情報",
     "category_en": "Research",
-    "updated": "2026-09-24"
+    "updated": "2026-09-24",
+    "logo": "./site-logos/logo-research-hub.png",
+    "theme_color": "#0F6F6C",
+    "accent_color": "#197F7A",
+    "tint_color": "#EEF8F7",
+    "border_color": "#C7E3E1"
   },
-{
-  "id": "international-ebp-search",
-  "title_ja": "海外EBP検索ナビ(βテスト中)",
-  "title_en": "International EBP Search",
-  "description_ja": "EBP・犯罪予防に関する海外サイトを日本語で検索・閲覧するのを支援するサイトです。",
-  "description_en": "A site that helps users search and browse international EBP and crime prevention resources in Japanese.",
-  "url_ja": "./beta-overseas-ebp.html",
-  "url_en": "./beta-overseas-ebp.html",
-  "category_ja": "海外EBP",
-  "category_en": "International EBP"
-},
+  {
+    "id": "international-ebp-search",
+    "title_ja": "海外EBP検索ナビ(βテスト中)",
+    "title_en": "International EBP Search",
+    "description_ja": "EBP・犯罪予防に関する海外サイトを日本語で検索・閲覧するのを支援するサイトです。",
+    "description_en": "A site that helps users search and browse international EBP and crime prevention resources in Japanese.",
+    "url_ja": "./beta-overseas-ebp.html",
+    "url_en": "./beta-overseas-ebp.html",
+    "category_ja": "海外EBP",
+    "category_en": "International EBP",
+    "logo": "./site-logos/logo-overseas-ebp.png",
+    "theme_color": "#173C68",
+    "accent_color": "#8F263B",
+    "tint_color": "#F2F6FB",
+    "border_color": "#CAD8E8"
+  },
   {
     "id": "daily-brief",
     "title_ja": "EBP Daily Brief",
@@ -44,7 +59,12 @@
     "url_en": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
     "category_ja": "研究・情報",
     "category_en": "Research",
-    "updated": "2026-09-25"
+    "updated": "2026-09-25",
+    "logo": "./site-logos/logo-daily-brief.png",
+    "theme_color": "#0C2B3C",
+    "accent_color": "#BD5D43",
+    "tint_color": "#FBF3F0",
+    "border_color": "#EBCFC7"
   },
   {
     "id": "stat-training",
@@ -56,6 +76,11 @@
     "url_en": "https://ebp-stat-training.grassy-wasp-8750.chatgpt.site",
     "category_ja": "学習",
     "category_en": "Learning",
-    "updated": "2026-09-23"
+    "updated": "2026-09-23",
+    "logo": "./site-logos/logo-stat-training.png",
+    "theme_color": "#1C2D4D",
+    "accent_color": "#983348",
+    "tint_color": "#F7F4F7",
+    "border_color": "#DED3DA"
   }
 ]
