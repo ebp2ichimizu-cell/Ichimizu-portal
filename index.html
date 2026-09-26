@@ -245,6 +245,81 @@
       text-decoration: none;
     }
 
+
+    /* 主要サイトカード：既存の形状を維持し、サイト固有色とロゴだけ追加 */
+    .card.site-card {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          135deg,
+          var(--site-tint, #ffffff) 0%,
+          #ffffff 100%
+        );
+      border-color: var(--site-border, var(--border));
+    }
+
+    .card.site-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 5px;
+      background: var(--site-theme, var(--accent));
+    }
+
+    .card.site-card:hover {
+      border-color: var(--site-theme, var(--accent));
+    }
+
+    .site-card-content {
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .site-card-logo {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      display: block;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(255,255,255,0.95);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.045);
+    }
+
+    .site-card-main {
+      min-width: 0;
+    }
+
+    .site-card .tag {
+      background: var(--site-tag-bg, var(--soft));
+      color: var(--site-accent, var(--muted));
+      font-weight: 700;
+    }
+
+    .site-card .preparing-label {
+      border-color: var(--site-border, var(--border));
+      color: var(--site-accent, var(--dark));
+      background: rgba(255,255,255,0.82);
+    }
+
+    @media (max-width: 380px) {
+      .site-card-content {
+        grid-template-columns: 50px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .site-card-logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+      }
+    }
+
     .card.preparing {
       opacity: 0.72;
       cursor: default;
@@ -379,21 +454,20 @@
       </div>
 
       <div style="margin-top: 12px;">
-  <a
-    href="./about.html"
-    style="
-      color: var(--dark);
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      border-bottom: 1px solid var(--dark);
-      padding-bottom: 2px;
-    "
-  >
-    このポータルについて
-  </a>
-</div>
-      
+        <a
+          href="./about.html"
+          style="
+            color: var(--dark);
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 1px solid var(--dark);
+            padding-bottom: 2px;
+          "
+        >
+          このポータルについて
+        </a>
+      </div>
     </header>
 
     <section id="meeting-section" hidden>
@@ -452,7 +526,7 @@
     <div class="section-title" id="main-sites-title">
       主要サイト
     </div>
-    
+
     <section id="sites-grid" class="grid">
       <div class="loading">読み込み中...</div>
     </section>
@@ -571,7 +645,7 @@
 
     function safeUrl(value) {
       try {
-        const url = new URL(value);
+        const url = new URL(value, window.location.href);
         if (
           url.protocol === "https:" ||
           url.protocol === "http:"
@@ -583,6 +657,14 @@
       }
 
       return "";
+    }
+
+
+    function safeColor(value, fallback) {
+      const color = String(value || "");
+      return /^#[0-9a-fA-F]{6}$/.test(color)
+        ? color
+        : fallback;
     }
 
     function getJapanDateKey() {
@@ -1189,6 +1271,43 @@
             const safeLink =
               safeUrl(url);
 
+            const themeColor =
+              safeColor(
+                item.theme_color,
+                "#b7b463"
+              );
+
+            const accentColor =
+              safeColor(
+                item.accent_color,
+                themeColor
+              );
+
+            const tintColor =
+              safeColor(
+                item.tint_color,
+                "#ffffff"
+              );
+
+            const borderColor =
+              safeColor(
+                item.border_color,
+                "#e4e3d9"
+              );
+
+            const logo =
+              typeof item.logo === "string"
+                ? item.logo
+                : "";
+
+            const cardStyle = `
+              --site-theme:${themeColor};
+              --site-accent:${accentColor};
+              --site-tint:${tintColor};
+              --site-border:${borderColor};
+              --site-tag-bg:${tintColor};
+            `;
+
             const updatedContent =
               item.updated &&
               !isPreparing
@@ -1205,33 +1324,50 @@
                 : "";
 
             const content = `
-              <div class="card-title">
-                ${escapeHTML(title)}
-              </div>
-
-              <div class="card-description">
-                ${escapeHTML(description)}
-              </div>
-
-              <div class="card-meta">
-                <span class="tag">
-                  ${escapeHTML(category)}
-                </span>
-
+              <div class="site-card-content">
                 ${
-                  isPreparing
+                  logo
                     ? `
-                      <span class="preparing-label">
-                        ${escapeHTML(
-                          translations[currentLanguage]
-                            .preparingLabel
-                        )}
-                      </span>
+                      <img
+                        class="site-card-logo"
+                        src="${escapeHTML(logo)}"
+                        alt=""
+                        loading="lazy"
+                      >
                     `
                     : ""
                 }
 
-                ${updatedContent}
+                <div class="site-card-main">
+                  <div class="card-title">
+                    ${escapeHTML(title)}
+                  </div>
+
+                  <div class="card-description">
+                    ${escapeHTML(description)}
+                  </div>
+
+                  <div class="card-meta">
+                    <span class="tag">
+                      ${escapeHTML(category)}
+                    </span>
+
+                    ${
+                      isPreparing
+                        ? `
+                          <span class="preparing-label">
+                            ${escapeHTML(
+                              translations[currentLanguage]
+                                .preparingLabel
+                            )}
+                          </span>
+                        `
+                        : ""
+                    }
+
+                    ${updatedContent}
+                  </div>
+                </div>
               </div>
             `;
 
@@ -1240,7 +1376,10 @@
               !safeLink
             ) {
               return `
-                <div class="card preparing">
+                <div
+                  class="card site-card preparing"
+                  style="${escapeHTML(cardStyle)}"
+                >
                   ${content}
                 </div>
               `;
@@ -1248,7 +1387,8 @@
 
             return `
               <a
-                class="card"
+                class="card site-card"
+                style="${escapeHTML(cardStyle)}"
                 href="${escapeHTML(safeLink)}"
                 target="_blank"
                 rel="noopener noreferrer"
