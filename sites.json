@@ -82,5 +82,22 @@
     "accent_color": "#983348",
     "tint_color": "#F7F4F7",
     "border_color": "#DED3DA"
+  },
+  {
+    "id": "ebp-design-support",
+    "title_ja": "EBP Design Support",
+    "title_en": "EBP Design Support",
+    "description_ja": "実務上の課題に対する施策をAIとともに考案・検討するためのプロンプト作成を支援するサイトです。",
+    "description_en": "A site that helps practitioners create prompts for using AI to develop and examine interventions for real-world problems.",
+    "url_ja": "https://ebp2ichimizu-cell.github.io/ichimizu-ebp-design-support/",
+    "url_en": "https://ebp2ichimizu-cell.github.io/ichimizu-ebp-design-support/",
+    "category_ja": "実践支援",
+    "category_en": "Practice Support",
+    "updated": "2026-09-27",
+    "logo": "./site-logos/logo-design-support.jpg",
+    "theme_color": "#D7A91E",
+    "accent_color": "#8A6910",
+    "tint_color": "#FFF9E8",
+    "border_color": "#E7D18B"
   }
 ]
