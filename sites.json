@@ -90,7 +90,7 @@
     "description_ja": "実務上の課題に対する施策をAIとともに考案・検討するためのプロンプト作成を支援するサイトです。",
     "description_en": "A site that helps practitioners create prompts for using AI to develop and examine interventions for real-world problems.",
     "url_ja": "https://ebp2ichimizu-cell.github.io/ichimizu-ebp-design-support/",
-    "url_en": "https://ebp2ichimizu-cell.github.io/ichimizu-ebp-design-support/",
+    "url_en": "https://ebp2ichimizu-cell.github.io/ebp-design-support-en/",
     "category_ja": "実践支援",
     "category_en": "Practice Support",
     "updated": "2026-09-27",
