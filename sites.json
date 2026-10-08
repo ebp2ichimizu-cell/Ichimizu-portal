@@ -99,5 +99,22 @@
     "accent_color": "#8A6910",
     "tint_color": "#FFF9E8",
     "border_color": "#E7D18B"
+  },
+  {
+    "id": "ichimizu-bbs",
+    "title_ja": "いちみず会 BBS",
+    "title_en": "Ichimizu-kai BBS",
+    "description_ja": "いちみず会の情報交換・意見交換のための掲示板です。閲覧はどなたでも可能で、投稿・返信はいちみず会LINEチャット参加者が利用できます。",
+    "description_en": "A bulletin board for information and discussion within Ichimizu-kai. Anyone can browse; posting and replies are available to Ichimizu-kai LINE chat participants.",
+    "url_ja": "https://ebp2ichimizu-cell.github.io/ichimizu-bbs/",
+    "url_en": "https://ebp2ichimizu-cell.github.io/ichimizu-bbs/",
+    "category_ja": "交流・掲示板",
+    "category_en": "Community / BBS",
+    "updated": "2026-10-08",
+    "logo": "./site-logos/logo-bbs.png",
+    "theme_color": "#990000",
+    "accent_color": "#B8860B",
+    "tint_color": "#FFF7EE",
+    "border_color": "#E4C5A0"
   }
 ]
