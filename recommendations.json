@@ -143,6 +143,30 @@
       "category_ja": "統計・分析",
       "category_en": "Statistics & Analysis",
       "active": true
+    },
+    {
+      "id": "column-013",
+      "title_ja": "空想EBP読本 Vol.1",
+      "title_en": "Imagining Evidence-Based Policing, Vol. 1",
+      "summary_ja": "医療・公衆衛生分野の実験を手がかりに、「情報を伝えること」と「実際に行動してもらうこと」の違いを考察。防犯アプリや自転車施錠を例に、行動しない理由に応じた介入と、その効果検証を考えます。",
+      "summary_en": "Drawing on intervention studies from health and public health, this column explores how crime-prevention communication can move beyond simply providing information to changing behavior, with examples involving crime-prevention apps and bicycle locking.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/essay/%E7%A9%BA%E6%83%B3ebp%E8%AA%AD%E6%9C%AC-vol-1",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/essay/%E7%A9%BA%E6%83%B3ebp%E8%AA%AD%E6%9C%AC-vol-1",
+      "category_ja": "EBP2",
+      "category_en": "EBP",
+      "active": true
+    },
+    {
+      "id": "column-014",
+      "title_ja": "空想EBP読本 Vol.2",
+      "title_en": "Imagining Evidence-Based Policing, Vol. 2",
+      "summary_ja": "社会規範を用いた電力消費の実験を手がかりに、「みんながやっている」という情報が人の行動をどう変えるかを考察。ブーメラン効果にも注目し、防犯広報では平均的な効果だけでなく「誰の行動がどう変わったか」を見る重要性を考えます。",
+      "summary_en": "Drawing on experiments using social norms to reduce electricity consumption, this column examines how information about what others do can change behavior, including possible boomerang effects and the importance of examining who changes and in what direction.",
+      "url_ja": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/essay/%E7%A9%BA%E6%83%B3ebp%E8%AA%AD%E6%9C%AC-vol-2",
+      "url_en": "https://sites.google.com/view/ichimizu-crime-prevention/home/column/essay/%E7%A9%BA%E6%83%B3ebp%E8%AA%AD%E6%9C%AC-vol-2",
+      "category_ja": "EBP2",
+      "category_en": "EBP",
+      "active": true
     }
   ],
   "daily_brief": [
