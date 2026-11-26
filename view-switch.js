@@ -2,85 +2,6 @@
   const VISUAL_URL =
     "https://ebp2ichimizu-cell.github.io/ichimizu-site-intro-pages/";
 
-  const DAILY_BRIEF_BASE =
-    "https://ebp2ichimizu-cell.github.io/ebp-daily-brief/";
-
-  const KEY =
-    "ichimizu-portal-view";
-
-  let liveDailyBriefItems = [];
-  let liveDailyLoaded = false;
-
-  async function fetchJson(url) {
-    const response = await fetch(url, { cache: "no-store" });
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${url}`);
-    }
-    return response.json();
-  }
-
-  async function loadLiveDailyBriefRecommendations() {
-    try {
-      const index = await fetchJson(`${DAILY_BRIEF_BASE}data/index.json`);
-      const entries = Array.isArray(index.entries)
-        ? [...index.entries]
-            .filter(entry => entry && entry.date && entry.file)
-            .sort((a, b) => b.date.localeCompare(a.date))
-            .slice(0, 5)
-        : [];
-
-      const briefs = await Promise.all(
-        entries.map(async entry => {
-          const url = new URL(entry.file, DAILY_BRIEF_BASE).href;
-          return fetchJson(url);
-        })
-      );
-
-      liveDailyBriefItems = briefs.flatMap(brief => {
-        if (!brief || !brief.date || !Array.isArray(brief.articles)) {
-          return [];
-        }
-        return brief.articles.map(article => {
-          const articleId = String(article.id || "").trim();
-          const directUrl = articleId
-            ? `${DAILY_BRIEF_BASE}?article=${encodeURIComponent(articleId)}`
-            : DAILY_BRIEF_BASE;
-          const title = String(article.title || "");
-          const summary = String(article.summary || "");
-          return {
-            id: articleId ? `daily-${articleId}` : `daily-${brief.date}-${title}`,
-            date: brief.date,
-            title_ja: title,
-            title_en: title,
-            summary_ja: summary,
-            summary_en: summary,
-            url_ja: directUrl,
-            url_en: directUrl,
-            active: true
-          };
-        });
-      });
-      liveDailyLoaded = true;
-      if (typeof renderRecommendations === "function") {
-        renderRecommendations();
-      }
-    } catch (error) {
-      console.error("Daily Brief recommendation load failed:", error);
-      liveDailyBriefItems = [];
-      liveDailyLoaded = true;
-      if (typeof renderRecommendations === "function") {
-        renderRecommendations();
-      }
-    }
-  }
-
-  // recommendations.jsonからではなく、Daily Brief本体の最新5掲載日を使用する。
-  if (typeof getRecentDailyBriefItems === "function") {
-    getRecentDailyBriefItems = function() {
-      return liveDailyLoaded ? liveDailyBriefItems : [];
-    };
-  }
-
   // ビジュアル表示との切り替えは従来のPortal Siteロゴで行う。
   const path = window.location.pathname.toLowerCase();
   const isPortalHome =
@@ -118,8 +39,6 @@
     ichimizu: { ja: "いちみず会を知る", en: "About Ichimizu-kai" },
     "research-hub": { ja: "国内研究を探す", en: "Find Japanese research" },
     "international-ebp-search": { ja: "海外のエビデンスを調べる", en: "Explore overseas evidence" },
-    "daily-brief": { ja: "新しい情報を追う", en: "Follow new developments" },
-    "stat-training": { ja: "統計を学ぶ", en: "Learn statistics" },
     "ebp-design-support": { ja: "施策を設計する", en: "Design interventions" }
   };
 
@@ -251,5 +170,4 @@
     setLanguage(currentLanguage);
   }
 
-  loadLiveDailyBriefRecommendations();
 })();

@@ -1178,10 +1178,6 @@
             item => item.active !== false
           );
 
-      const recentBriefs =
-        getRecentDailyBriefItems(
-          recommendationsData.daily_brief
-        );
 
       const japanDate =
         getJapanDateKey();
@@ -1192,22 +1188,12 @@
           `column-${japanDate}`
         );
 
-      const selectedBrief =
-        selectDailyItem(
-          recentBriefs,
-          `daily-${japanDate}`
-        );
 
       const cards = [
         createRecommendationCard(
           selectedColumn,
           "column",
           false
-        ),
-        createRecommendationCard(
-          selectedBrief,
-          "daily",
-          true
         )
       ].filter(Boolean);
 
