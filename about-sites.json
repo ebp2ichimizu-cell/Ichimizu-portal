@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25",
+  "updated_at": "2026-11-26",
   "sites": [
     {
       "order": 1,
@@ -11,7 +11,7 @@
       "use_cases": [
         "どのサイトを使えばよいか分からない",
         "いちみず会のWebコンテンツ全体を見たい",
-        "国内研究・海外研究・新着情報・学習教材をまとめて探したい"
+        "国内研究・海外研究をまとめて探したい"
       ],
       "update_frequency": "随時",
       "url": "./",
@@ -65,38 +65,6 @@
       "update_frequency": "1月・4月・7月・10月",
       "url": "./beta-overseas-ebp.html",
       "status": "beta"
-    },
-    {
-      "order": 5,
-      "id": "daily-brief",
-      "name": "EBP Daily Brief",
-      "role": "新しい情報を追う",
-      "platform": "ChatGPT Sites",
-      "description": "犯罪予防、EBP/EBPM、AI・データ活用、警察の防犯施策などについて、新しい研究・政策・実務情報を実務家向けに整理して紹介します。",
-      "use_cases": [
-        "EBP・犯罪予防の新しい動きを短時間で把握したい",
-        "新しい論文や一次情報を見つけたい",
-        "国内外の実務動向を定期的に確認したい"
-      ],
-      "update_frequency": "火曜日・金曜日",
-      "url": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
-      "status": "active"
-    },
-    {
-      "order": 6,
-      "id": "stat-training",
-      "name": "EBP統計トレーニング",
-      "role": "EBPを使う力を身につける",
-      "platform": "ChatGPT Sites",
-      "description": "EBPを実務で使うために必要となる、統計・研究デザイン・犯罪学・社会科学等の基礎を学ぶトレーニングサイトです。Excelやjamoviによる演習にも取り組みます。",
-      "use_cases": [
-        "統計を基礎から学びたい",
-        "論文の結果を自分で読めるようになりたい",
-        "データを使って施策を検証する力を身につけたい"
-      ],
-      "update_frequency": "水曜日・土曜日",
-      "url": "https://ebp-stat-training.grassy-wasp-8750.chatgpt.site",
-      "status": "active"
     }
   ]
 }
