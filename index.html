@@ -575,13 +575,6 @@
       <div class="loading">読み込み中...</div>
     </section>
 
-    <a
-      class="glossary-button"
-      href="https://ebp2ichimizu-cell.github.io/ichimizu-behavior-glossary/"
-      target="_blank"
-      rel="noopener noreferrer"
-      lang="ja"
-    >いちみず会　EBP関連用語ライブラリ</a>
 
     <section class="share-box">
       <div class="section-title" id="share-section-title">
@@ -696,6 +689,7 @@
     }
 
     function safeUrl(value) {
+      if (typeof value !== "string" || !value.trim()) return "";
       try {
         const url = new URL(value, window.location.href);
         if (
@@ -1182,20 +1176,12 @@
       const japanDate =
         getJapanDateKey();
 
-      const selectedColumn =
-        selectDailyItem(
-          columns,
-          `column-${japanDate}`
-        );
-
-
-      const cards = [
-        createRecommendationCard(
-          selectedColumn,
-          "column",
-          false
-        )
-      ].filter(Boolean);
+      const selectedColumn = selectDailyItem(columns, `column-${japanDate}`);
+      const remainingColumns = columns.filter(item => item.id !== selectedColumn?.id);
+      const secondColumn = selectDailyItem(remainingColumns, `column-second-${japanDate}`);
+      const cards = [selectedColumn, secondColumn]
+        .filter(Boolean)
+        .map(item => createRecommendationCard(item, "column", false));
 
       if (!cards.length) {
         document

@@ -82,5 +82,20 @@
     "accent_color": "#B8860B",
     "tint_color": "#FFF7EE",
     "border_color": "#E4C5A0"
+  },
+  {
+    "id": "behavior-glossary",
+    "title_ja": "いちみず会 EBP関連用語ライブラリ",
+    "title_en": "Ichimizu-kai EBP Glossary",
+    "description_ja": "EBP・犯罪予防に関連する用語を調べるためのライブラリです。",
+    "description_en": "A glossary of terms related to EBP and crime prevention.",
+    "url_ja": "https://ebp2ichimizu-cell.github.io/ichimizu-behavior-glossary/",
+    "url_en": "https://ebp2ichimizu-cell.github.io/ichimizu-behavior-glossary/",
+    "category_ja": "学習",
+    "category_en": "Learning",
+    "theme_color": "#173C68",
+    "accent_color": "#173C68",
+    "tint_color": "#F2F6FB",
+    "border_color": "#CAD8E8"
   }
 ]
