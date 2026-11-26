@@ -1,0 +1,102 @@
+{
+  "updated_at": "2026-09-25",
+  "sites": [
+    {
+      "order": 1,
+      "id": "portal",
+      "name": "いちみずポータル",
+      "role": "すべての入口",
+      "platform": "GitHub Pages",
+      "description": "いちみず会が運営するWebサイト群をつなぐ総合入口です。EBP・犯罪予防について「知りたい」「調べたい」「学びたい」という目的に応じて、適切なサイトへ案内します。",
+      "use_cases": [
+        "どのサイトを使えばよいか分からない",
+        "いちみず会のWebコンテンツ全体を見たい",
+        "国内研究・海外研究・新着情報・学習教材をまとめて探したい"
+      ],
+      "update_frequency": "随時",
+      "url": "./",
+      "status": "active",
+      "feature_note": "横断検索機能を追加予定"
+    },
+    {
+      "order": 2,
+      "id": "ichimizu-hp",
+      "name": "いちみず会HP",
+      "role": "いちみず会の活動を知る",
+      "platform": "Google Sites",
+      "description": "いちみず会そのものを紹介する公式ホームページです。勉強会の開催案内、活動報告、会員の活動、犯罪予防に関するコラムなどを掲載しています。",
+      "use_cases": [
+        "いちみず会について知りたい",
+        "勉強会の情報を確認したい",
+        "活動報告やコラムを読みたい"
+      ],
+      "update_frequency": "随時",
+      "url": "https://sites.google.com/view/ichimizu-crime-prevention/home",
+      "status": "active"
+    },
+    {
+      "order": 3,
+      "id": "research-hub",
+      "name": "国内警察EBP・犯罪予防 研究ハブ",
+      "role": "国内の研究を調べる",
+      "platform": "GitHub Pages",
+      "description": "国内の警察EBP・犯罪予防に関する研究を整理・蓄積する研究ハブです。研究を見つけ、内容を理解し、統計的結果を確認し、原著へたどる流れを支援します。",
+      "use_cases": [
+        "日本で行われた犯罪予防研究を探したい",
+        "警察・大学等による効果検証事例を知りたい",
+        "研究結果を実務の視点から理解したい"
+      ],
+      "update_frequency": "月末～月初",
+      "url": "https://ebp2ichimizu-cell.github.io/ichimizu-research-hub-github/#/",
+      "status": "active"
+    },
+    {
+      "order": 4,
+      "id": "overseas-ebp",
+      "name": "海外EBPナビ",
+      "role": "海外のエビデンスを調べる",
+      "platform": "GitHub Pages",
+      "description": "海外のEvidence-Based Policing・犯罪予防に関する研究や実務リソースを、日本の実務家が探し、理解し、原文までたどれるようにするナビゲーションサイトです。",
+      "use_cases": [
+        "海外ではどのような犯罪予防策が検証されているか知りたい",
+        "特定の犯罪・課題への対策を探したい",
+        "海外の研究・実践事例の原文までたどりたい"
+      ],
+      "update_frequency": "1月・4月・7月・10月",
+      "url": "./beta-overseas-ebp.html",
+      "status": "beta"
+    },
+    {
+      "order": 5,
+      "id": "daily-brief",
+      "name": "EBP Daily Brief",
+      "role": "新しい情報を追う",
+      "platform": "ChatGPT Sites",
+      "description": "犯罪予防、EBP/EBPM、AI・データ活用、警察の防犯施策などについて、新しい研究・政策・実務情報を実務家向けに整理して紹介します。",
+      "use_cases": [
+        "EBP・犯罪予防の新しい動きを短時間で把握したい",
+        "新しい論文や一次情報を見つけたい",
+        "国内外の実務動向を定期的に確認したい"
+      ],
+      "update_frequency": "火曜日・金曜日",
+      "url": "https://ebp-daily-brief.grassy-wasp-8750.chatgpt.site",
+      "status": "active"
+    },
+    {
+      "order": 6,
+      "id": "stat-training",
+      "name": "EBP統計トレーニング",
+      "role": "EBPを使う力を身につける",
+      "platform": "ChatGPT Sites",
+      "description": "EBPを実務で使うために必要となる、統計・研究デザイン・犯罪学・社会科学等の基礎を学ぶトレーニングサイトです。Excelやjamoviによる演習にも取り組みます。",
+      "use_cases": [
+        "統計を基礎から学びたい",
+        "論文の結果を自分で読めるようになりたい",
+        "データを使って施策を検証する力を身につけたい"
+      ],
+      "update_frequency": "水曜日・土曜日",
+      "url": "https://ebp-stat-training.grassy-wasp-8750.chatgpt.site",
+      "status": "active"
+    }
+  ]
+}
