@@ -2,35 +2,21 @@
   const VISUAL_URL =
     "https://ebp2ichimizu-cell.github.io/ichimizu-site-intro-pages/";
 
-  // ビジュアル表示との切り替えは従来のPortal Siteロゴで行う。
+  const KEY = "ichimizu-portal-view";
   const path = window.location.pathname.toLowerCase();
-  const isPortalHome =
-    path === "/ichimizu-portal/" ||
+  const isPortalHome = path === "/ichimizu-portal/" ||
     path === "/ichimizu-portal/index.html";
-
-  if (isPortalHome && localStorage.getItem(KEY) === "visual") {
+  // 保存先へのアクセスが制限されても、通常リンクは機能させる。
+  let preferredView = null;
+  try { preferredView = localStorage.getItem(KEY); } catch (_) {}
+  if (isPortalHome && preferredView === "visual") {
     window.location.replace(VISUAL_URL);
     return;
   }
-
-  const logo = document.querySelector(".app-logo");
-  if (logo) {
-    logo.setAttribute("role", "button");
-    logo.setAttribute("tabindex", "0");
-    logo.setAttribute("aria-label", "ビジュアル表示に切り替える");
-    logo.style.cursor = "pointer";
-    logo.style.webkitTapHighlightColor = "transparent";
-
-    const goVisual = () => {
-      localStorage.setItem(KEY, "visual");
-      window.location.href = VISUAL_URL;
-    };
-    logo.addEventListener("click", goVisual);
-    logo.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        goVisual();
-      }
+  const visualLink = document.getElementById("portal-visual-link");
+  if (visualLink) {
+    visualLink.addEventListener("click", () => {
+      try { localStorage.setItem(KEY, "visual"); } catch (_) {}
     });
   }
 

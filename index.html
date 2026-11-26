@@ -312,6 +312,10 @@
       min-width: 0;
     }
 
+    .site-card-content.no-logo {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
     .site-card .tag {
       background: var(--site-tag-bg, var(--soft));
       color: var(--site-accent, var(--muted));
@@ -475,11 +479,13 @@
   <main class="container">
 
     <header>
-      <img
-        src="IMG_2260.png"
-        alt="いちみず会 EBP2 ロゴ"
-        class="app-logo"
-      >
+      <a id="portal-visual-link" href="https://ebp2ichimizu-cell.github.io/ichimizu-site-intro-pages/" aria-label="ビジュアル表示に切り替える" style="display:inline-block;">
+        <img
+          src="IMG_2260.png"
+          alt="いちみず会 EBP2 ロゴ"
+          class="app-logo"
+        >
+      </a>
 
       <h1>EBP2 - いちみず -</h1>
 
@@ -621,6 +627,32 @@
   <script>
     let currentLanguage =
       localStorage.getItem("language") || "ja";
+
+    let hubRecommendations = [];
+    const hubBase = "https://ebp2ichimizu-cell.github.io/ichimizu-research-hub-github/";
+
+    async function loadHubRecommendations() {
+      try {
+        const datasets = await Promise.all(["ja", "en"].map(async lang => {
+          const response = await fetch(`${hubBase}data/studies-${lang}.json`, {cache: "no-store"});
+          if (!response.ok) throw new Error(`Research HUB HTTP ${response.status}`);
+          const data = await response.json();
+          if (!Array.isArray(data)) throw new Error("Invalid HUB data");
+          return data;
+        }));
+        const en = new Map(datasets[1].map(item => [item.id, item]));
+        hubRecommendations = datasets[0].filter(item => item.id && item.title && en.get(item.id)?.title).map(ja => {
+          const other = en.get(ja.id);
+          const url = `${hubBase}#/study/${encodeURIComponent(ja.id)}`;
+          const summary = (item, lang) => [item.authorsText, item.year, item.result, item.limitations ? (lang === "ja" ? "研究の限界：" : "Limitations: ") + item.limitations : ""].filter(Boolean).join(" / ");
+          return {id: ja.id, title_ja: ja.title, title_en: other.title,
+            summary_ja: summary(ja, "ja"), summary_en: summary(other, "en"), url_ja: url, url_en: url};
+        }).sort((a,b) => a.id.localeCompare(b.id));
+      } catch (error) {
+        console.warn("Research HUB pickup unavailable", error);
+      }
+      renderRecommendations();
+    }
 
     let meetingData = null;
     let sitesData = [];
@@ -1107,7 +1139,9 @@
       const typeLabel =
         type === "column"
           ? translations[currentLanguage].columnType
-          : translations[currentLanguage].dailyType;
+          : type === "hub"
+            ? (currentLanguage === "ja" ? "研究HUB ピックアップ" : "Research HUB Pickup")
+            : translations[currentLanguage].dailyType;
 
       const safeLink =
         safeUrl(url);
@@ -1142,8 +1176,7 @@
                 <a
                   class="recommendation-link"
                   href="${escapeHTML(safeLink)}"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  ${type === "hub" ? "" : 'target="_blank" rel="noopener noreferrer"'}
                 >
                   ${escapeHTML(
                     translations[currentLanguage].readMore
@@ -1177,11 +1210,11 @@
         getJapanDateKey();
 
       const selectedColumn = selectDailyItem(columns, `column-${japanDate}`);
-      const remainingColumns = columns.filter(item => item.id !== selectedColumn?.id);
-      const secondColumn = selectDailyItem(remainingColumns, `column-second-${japanDate}`);
-      const cards = [selectedColumn, secondColumn]
-        .filter(Boolean)
-        .map(item => createRecommendationCard(item, "column", false));
+      const selectedStudy = selectDailyItem(hubRecommendations, `hub-${japanDate}`);
+      const cards = [
+        createRecommendationCard(selectedColumn, "column", false),
+        createRecommendationCard(selectedStudy, "hub", false)
+      ].filter(Boolean);
 
       if (!cards.length) {
         document
@@ -1348,7 +1381,7 @@
                 : "";
 
             const content = `
-              <div class="site-card-content">
+              <div class="site-card-content${logo ? "" : " no-logo"}">
                 ${
                   logo
                     ? `
@@ -1414,8 +1447,7 @@
                 class="card site-card"
                 style="${escapeHTML(cardStyle)}"
                 href="${escapeHTML(safeLink)}"
-                target="_blank"
-                rel="noopener noreferrer"
+                ${item.id === "research-hub" ? "" : 'target="_blank" rel="noopener noreferrer"'}
               >
                 ${content}
               </a>
@@ -1445,8 +1477,16 @@
     setLanguage(currentLanguage);
 
     loadMeeting();
-    loadRecommendations();
+    loadRecommendations().then(loadHubRecommendations);
     loadSites();
+    let recommendationDate = getJapanDateKey();
+    setInterval(() => {
+      const today = getJapanDateKey();
+      if (today !== recommendationDate) {
+        recommendationDate = today;
+        loadRecommendations().then(loadHubRecommendations);
+      }
+    }, 60000);
 
     if ("serviceWorker" in navigator) {
       window.addEventListener(
